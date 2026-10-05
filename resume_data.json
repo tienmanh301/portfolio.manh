@@ -1,0 +1,91 @@
+{
+  "basics": {
+    "name": "Nguyen Tien Manh",
+    "title": "Competitive Programmer & FinTech / Data Science Student",
+    "location": {
+      "city": "Ha Noi",
+      "country": "Vietnam",
+      "address": "Ha Noi, Vietnam"
+    },
+    "phone": "0964564955",
+    "email": "k64.2513310134@ftu.edu.vn",
+    "github": "https://github.com/tienmanh301",
+    "summary": "Motivated Finance and Banking student at Foreign Trade University with a strong background in Competitive Programming, Algorithms & Data Structures, and AI-assisted development. Experienced in problem setting, testcase engineering, and algorithmic optimization."
+  },
+  "education": [
+    {
+      "institution": "Foreign Trade University, Ha Noi",
+      "degree": "Bachelor's Degree",
+      "major": "Finance and Banking",
+      "startDate": "2026",
+      "endDate": "Present",
+      "status": "In Progress",
+      "relatedCoursework": [
+        "Programming for Data Analysis and Scientific Computing",
+        "Financial Technology",
+        "The Application of Machine Learning to Financial Analysis"
+      ]
+    },
+    {
+      "institution": "Dien Chau 4 High School, Dien Chau, Nghe An",
+      "degree": "High School Diploma",
+      "major": "Natural Sciences Specialized Class",
+      "startDate": "2022",
+      "endDate": "2025"
+    }
+  ],
+  "workExperience": [
+    {
+      "organization": "High School Gifted IT Team",
+      "role": "Competitive Programming Technical Assistant And Problem Setter",
+      "period": "2024",
+      "highlights": [
+        "Configured and operated the Themis automated evaluation system to execute and grade complex Data Structures And Algorithms problem sets for the provincial gifted team.",
+        "Engineered, validated, and stress-tested comprehensive testcases to cover edge cases and enforce strict Time and Space Complexity constraints (O(N log N), O(N)).",
+        "Analyzed and debugged student code submissions, providing detailed technical feedback on optimizing dynamic programming state transitions, graph traversals, and advanced data structures (Segment Tree, Fenwick Tree)."
+      ],
+      "technologies": ["C++", "Themis", "Data Structures", "Algorithms", "Segment Tree", "Fenwick Tree"]
+    },
+    {
+      "organization": "VNOI And Online Judge Platforms",
+      "role": "Algorithm Practice And Problem Solving",
+      "period": "2024",
+      "highlights": [
+        "Solved and optimized over 100 algorithmic problems across VNOI, LQDOJ, and LCOJ platforms, specializing in Dynamic Programming, Graph Theory, Number Theory, and String Hashing.",
+        "Analyzed contest editorials and refactored suboptimal solution code to eliminate Time Limit Exceeded (TLE) and Memory Limit Exceeded (MLE) bottlenecks."
+      ],
+      "technologies": ["C++", "Python", "VNOI", "LQDOJ", "LCOJ", "Dynamic Programming", "Graph Theory"]
+    }
+  ],
+  "skills": {
+    "programmingLanguages": ["Pascal", "C", "C++", "Python", "HTML", "SQL"],
+    "algorithmsAndDataStructures": [
+      "Dynamic Programming",
+      "Graph Theory",
+      "Number Theory",
+      "String Hashing",
+      "Segment Tree",
+      "Fenwick Tree (BIT)",
+      "Disjoint Set Union (DSU)"
+    ],
+    "toolsAndEnvironments": ["Themis", "Visual Studio Code", "Online Judge"],
+    "productivityAndAi": [
+      "AI-Assisted Software Development",
+      "Microsoft Excel",
+      "Word",
+      "PowerPoint"
+    ]
+  },
+  "achievements": [
+    {
+      "title": "3rd place, Provincial Outstanding Student in IT, Nghe An Province",
+      "year": "2024",
+      "category": "Academic / Competitive Programming"
+    },
+    {
+      "title": "Solved 100+ Advanced Algorithmic Problems across VNOI, LQDOJ, and LCOJ Online Judges",
+      "year": "2024",
+      "category": "Competitive Programming"
+    }
+  ]
+}
