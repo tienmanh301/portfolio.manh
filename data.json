@@ -1,0 +1,108 @@
+{
+  "personal_info": {
+    "name": "Nguyen Tien Manh",
+    "location": "Ha Noi, Vietnam",
+    "phone": "0964564955",
+    "email": "k64.2513310134@ftu.edu.vn",
+    "github": "https://github.com/tienmanh301",
+    "title": "Finance & Banking | Competitive Programmer / FinTech Enthusiast",
+    "residence": "Vietnam",
+    "city": "Ha Noi",
+    "school": "Foreign Trade University (FTU)"
+  },
+  "education": [
+    {
+      "school": "Foreign Trade University, Ha Noi",
+      "degree": "Bachelor of Finance and Banking",
+      "major": "Finance and Banking",
+      "period": "2026 – Present",
+      "related_coursework": [
+        "Programming for Data Analysis and Scientific Computing",
+        "Financial Technology and The Application of Machine Learning to Financial Analysis"
+      ]
+    },
+    {
+      "school": "Dien Chau 4 High School, Dien Chau, Nghe An",
+      "degree": "High School Diploma",
+      "specialization": "Natural Sciences Specialized Class",
+      "period": "2022 – 2025"
+    }
+  ],
+  "experience": [
+    {
+      "organization": "High School Gifted IT Team",
+      "role": "Competitive Programming Technical Assistant And Problem Setter",
+      "period": "2024",
+      "bullets": [
+        "Configured and operated the Themis automated evaluation system to execute and grade complex Data Structures And Algorithms problem sets for the provincial gifted team.",
+        "Engineered, validated, and stress-tested comprehensive testcases to cover edge cases and enforce strict Time and Space Complexity constraints (O(N log N), O(N)).",
+        "Analyzed and debugged student code submissions, providing detailed technical feedback on optimizing dynamic programming state transitions, graph traversals, and advanced data structures (Segment Tree, Fenwick Tree)."
+      ]
+    },
+    {
+      "organization": "VNOI And Online Judge Platforms",
+      "role": "Algorithm Practice And Problem Solving",
+      "period": "2024",
+      "bullets": [
+        "Solved and optimized over 100 algorithmic problems across VNOI, LQDOJ, and LCOJ platforms, specializing in Dynamic Programming, Graph Theory, Number Theory, and String Hashing.",
+        "Analyzed contest editorials and refactored suboptimal solution code to eliminate Time Limit Exceeded (TLE) and Memory Limit Exceeded (MLE) bottlenecks."
+      ]
+    }
+  ],
+  "skills": {
+    "programming_languages": [
+      { "name": "C / C++", "level": 92 },
+      { "name": "Python", "level": 88 },
+      { "name": "Pascal", "level": 85 },
+      { "name": "SQL", "level": 78 },
+      { "name": "HTML / CSS", "level": 75 }
+    ],
+    "algorithms_and_data_structures": [
+      "Dynamic Programming (DP)",
+      "Graph Theory",
+      "Number Theory",
+      "String Hashing",
+      "Segment Tree",
+      "Fenwick Tree (BIT)",
+      "Disjoint Set Union (DSU)"
+    ],
+    "tools_and_environments": [
+      "Themis Auto-grader",
+      "Visual Studio Code",
+      "Online Judges (VNOI, LQDOJ, LCOJ)",
+      "Git & GitHub"
+    ],
+    "productivity_and_ai": [
+      "AI-Assisted Software Development",
+      "Microsoft Excel (Financial Modeling)",
+      "Microsoft Word & PowerPoint",
+      "Data Analysis & Scientific Computing"
+    ]
+  },
+  "achievements": [
+    {
+      "title": "3rd Place, Provincial Outstanding Student in IT",
+      "organization": "Nghe An Province Department of Education and Training",
+      "year": "2024",
+      "description": "Won 3rd prize in the competitive programming provincial gifted student examination in Nghe An province."
+    },
+    {
+      "title": "Solved 100+ Advanced Algorithmic Problems",
+      "organization": "VNOI, LQDOJ, and LCOJ Online Judges",
+      "year": "2024",
+      "description": "Mastered complex algorithms including Segment Trees, Fenwick Trees, Graph Algorithms, and Dynamic Programming."
+    },
+    {
+      "title": "FTU FinTech & Data Analysis Pioneer",
+      "organization": "Foreign Trade University",
+      "year": "2026 – Present",
+      "description": "Applying Machine Learning, Data Analytics, and Algorithmic methods to Quantitative Finance and Banking models."
+    }
+  ],
+  "stats": {
+    "problems_solved": "100+",
+    "provincial_award": "3rd Place",
+    "years_experience": "2+ Years",
+    "tech_stack_count": "10+"
+  }
+}
