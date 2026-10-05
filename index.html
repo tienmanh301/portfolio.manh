@@ -3,60 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nguyen Tien Manh | Portfolio & Resume</title>
-  <meta name="description" content="Personal Portfolio of Nguyen Tien Manh - Finance & Banking Student at FTU, Competitive Programmer & Algorithm Problem Solver." />
-  
-  <!-- Google Fonts -->
+  <title>Nguyen Tien Manh | Portfolio - Algorithmic & FinTech Space</title>
+  <meta name="description" content="Portfolio of Nguyen Tien Manh - Finance & Banking at FTU, Competitive Programmer, and FinTech Enthusiast." />
+
+  <!-- Google Fonts: Poppins & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Font Awesome Icons -->
+
+  <!-- Font Awesome 6 CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
+  <!-- Tailwind Configuration for Art Space Dark Theme -->
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"Poppins"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
           },
           colors: {
-            brand: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-            },
-            cyanGlow: '#06b6d4',
-            emeraldGlow: '#10b981',
-            darkBg: '#090d16',
-            darkCard: '#111827',
-            darkBorder: '#1f293d',
+            art: {
+              bg: '#191923',
+              darkBg: '#14141d',
+              card: '#1e1e28',
+              cardHover: '#23232f',
+              sidebar: '#20202a',
+              border: 'rgba(255, 255, 255, 0.07)',
+              accent: '#FFC107',
+              accentHover: '#FFB100',
+              accentLight: '#FFE082',
+              accentGlow: 'rgba(255, 193, 7, 0.25)',
+              textMuted: '#8c8c9e',
+              textLight: '#cacace',
+              textWhite: '#fafafc',
+            }
+          },
+          boxShadow: {
+            'art-card': '0 3px 8px 0 rgba(15, 15, 20, 0.2)',
+            'art-hover': '0 10px 30px -5px rgba(0, 0, 0, 0.4)',
+            'gold-glow': '0 0 25px rgba(255, 193, 7, 0.35)',
+            'gold-sm': '0 0 10px rgba(255, 193, 7, 0.25)',
           },
           animation: {
-            'blob': 'blob 8s infinite',
-            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'float': 'float 3s ease-in-out infinite',
-            'spin-slow': 'spin 6s linear infinite',
+            'pulse-glow': 'pulseGlow 2.5s infinite',
+            'float': 'float 3.5s ease-in-out infinite',
           },
           keyframes: {
-            blob: {
-              '0%': { transform: 'translate(0px, 0px) scale(1)' },
-              '33%': { transform: 'translate(30px, -40px) scale(1.1)' },
-              '66%': { transform: 'translate(-20px, 20px) scale(0.95)' },
-              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 10px rgba(255, 193, 7, 0.3)' },
+              '50%': { boxShadow: '0 0 25px rgba(255, 193, 7, 0.6)' },
             },
             float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-8px)' },
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-6px)' },
             }
           }
         }
@@ -65,1370 +70,1119 @@
   </script>
 
   <style>
-    /* Custom Scrollbar */
+    /* Custom Scrollbar for Art Space */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 6px;
+      height: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #090d16;
+      background: #14141d;
     }
     ::-webkit-scrollbar-thumb {
-      background: #1f293d;
+      background: #2c2c38;
       border-radius: 9999px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #6366f1;
+      background: #FFC107;
     }
 
-    /* Glassmorphism Styles */
-    .glass-card {
-      background: rgba(17, 24, 39, 0.75);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+    /* Custom Art Space Card Transitions */
+    .art-card {
+      background: #1e1e28;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .art-card:hover {
+      background: #23232f;
+      border-color: rgba(255, 193, 7, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 193, 7, 0.15);
+    }
+
+    /* Badge & Tag Styling */
+    .art-tag {
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #cacace;
+      transition: all 0.2s ease;
     }
-    .glass-card:hover {
-      border-color: rgba(99, 102, 241, 0.35);
+    .art-tag:hover {
+      border-color: #FFC107;
+      color: #FFC107;
+      background: rgba(255, 193, 7, 0.06);
     }
-    .glass-nav {
-      background: rgba(9, 13, 22, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    /* Circular Progress Ring */
+    .progress-ring__circle {
+      transition: stroke-dashoffset 0.8s ease-in-out;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
     }
-    
-    .gradient-text {
-      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+
+    /* Glowing Dots */
+    .glow-dot {
+      box-shadow: 0 0 8px #FFC107;
     }
-    
-    .grid-bg {
-      background-size: 40px 40px;
+    .online-pulse {
+      animation: pulseGreen 2s infinite;
+    }
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    /* Subtle background grid */
+    .art-grid-bg {
+      background-size: 30px 30px;
       background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
     }
 
-    /* Equalizer Sound Waves */
-    .equalizer-bar {
+    /* Typewriter Cursor */
+    .typewriter-cursor {
+      display: inline-block;
       width: 3px;
-      background: linear-gradient(to top, #6366f1, #06b6d4);
-      border-radius: 9999px;
-      height: 4px;
-      transition: height 0.2s ease;
+      margin-left: 2px;
+      background-color: #FFC107;
+      animation: blink 1s infinite;
     }
-    .playing .bar-1 { animation: eqAnimation 0.8s ease-in-out infinite; }
-    .playing .bar-2 { animation: eqAnimation 1.1s ease-in-out infinite 0.15s; }
-    .playing .bar-3 { animation: eqAnimation 0.7s ease-in-out infinite 0.3s; }
-    .playing .bar-4 { animation: eqAnimation 0.9s ease-in-out infinite 0.45s; }
-
-    @keyframes eqAnimation {
-      0%, 100% { height: 4px; }
-      50% { height: 18px; }
-    }
-
-    /* Range slider custom style */
-    input[type=range] {
-      accent-color: #6366f1;
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
     }
   </style>
 </head>
-<body class="bg-darkBg text-slate-200 font-sans antialiased selection:bg-brand-500 selection:text-white relative min-h-screen overflow-x-hidden pb-24 sm:pb-16">
+<body class="bg-art-darkBg text-art-textLight font-sans antialiased selection:bg-art-accent selection:text-art-darkBg min-h-screen">
 
-  <!-- Background Ambient Glows -->
-  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden grid-bg">
-    <div class="absolute -top-40 -left-40 w-96 h-96 bg-brand-600/20 rounded-full blur-[128px] animate-blob"></div>
-    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-cyanGlow/15 rounded-full blur-[128px] animate-blob animation-delay-2000"></div>
-    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-purple-600/15 rounded-full blur-[128px] animate-blob animation-delay-4000"></div>
-  </div>
-
-  <!-- Toast Notification -->
-  <div id="toast" class="fixed bottom-24 right-6 sm:bottom-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-darkCard/95 border border-brand-500/40 text-white px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3">
-    <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-      <i class="fa-solid fa-check text-sm"></i>
-    </div>
-    <span id="toast-message" class="text-sm font-medium">Đã sao chép vào bộ nhớ tạm!</span>
-  </div>
-
-  <!-- Navigation Bar -->
-  <header class="sticky top-0 z-40 w-full glass-nav transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      
-      <!-- Brand Logo -->
-      <a href="#hero" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-cyan-500 flex items-center justify-center text-white font-bold font-mono text-base shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform">
-          &lt;M/&gt;
-        </div>
-        <div class="flex flex-col">
-          <span class="font-bold text-white tracking-tight group-hover:text-brand-400 transition-colors">Nguyen Tien Manh</span>
-          <span class="text-xs text-slate-400 font-mono">FTU &bull; Algorithm &amp; FinTech</span>
-        </div>
-      </a>
-
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-1 lg:gap-2">
-        <a href="#about" class="px-3.5 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all">Giới thiệu</a>
-        <a href="#experience" class="px-3.5 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all">Kinh nghiệm</a>
-        <a href="#skills" class="px-3.5 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all">Kỹ năng</a>
-        <a href="#education" class="px-3.5 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all">Học vấn</a>
-        <a href="#achievements" class="px-3.5 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all">Thành tích</a>
-        <a href="#contact" class="px-3.5 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-lg transition-all">Liên hệ</a>
-      </nav>
-
-      <!-- Desktop CTA & Actions -->
-      <div class="hidden sm:flex items-center gap-3">
-        <!-- Quick Audio Pill in Navbar -->
-        <button onclick="toggleMusicPlay()" class="px-3 py-1.5 text-xs font-mono font-medium rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-cyan-300 border border-cyan-500/30 hover:border-cyan-400 transition-all flex items-center gap-2" title="Bật/Tắt nhạc nền Lofi">
-          <div id="nav-equalizer" class="flex items-end gap-0.5 h-3">
-            <div class="equalizer-bar bar-1"></div>
-            <div class="equalizer-bar bar-2"></div>
-            <div class="equalizer-bar bar-3"></div>
-          </div>
-          <span id="nav-music-text">Lofi Music</span>
-        </button>
-
-        <button onclick="openJsonModal()" class="px-3.5 py-2 text-xs font-mono font-medium rounded-lg bg-slate-800/80 hover:bg-slate-700/80 text-brand-300 border border-brand-500/30 hover:border-brand-400 transition-all flex items-center gap-2">
-          <i class="fa-solid fa-code"></i> JSON Data
-        </button>
-        <a href="https://github.com/tienmanh301" target="_blank" rel="noopener noreferrer" class="p-2 text-slate-300 hover:text-white bg-slate-800/60 hover:bg-slate-700 rounded-lg border border-slate-700/50 transition-all" title="GitHub Profile">
-          <i class="fa-brands fa-github text-lg"></i>
-        </a>
+  <!-- Mobile Header Bar -->
+  <header class="lg:hidden sticky top-0 z-40 bg-art-sidebar/95 backdrop-blur-md border-b border-art-border px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="relative w-9 h-9 rounded-full overflow-hidden border border-art-accent/40">
+        <img src="avatar.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Nguyen+Tien+Manh&background=1e1e28&color=FFC107&bold=true'" alt="Avatar" class="w-full h-full object-cover">
       </div>
-
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">
-        <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
-      </button>
-    </div>
-
-    <!-- Mobile Drawer Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-darkBg/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2">
-      <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Giới thiệu</a>
-      <a href="#experience" onclick="toggleMobileMenu()" class="block px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Kinh nghiệm</a>
-      <a href="#skills" onclick="toggleMobileMenu()" class="block px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Kỹ năng</a>
-      <a href="#education" onclick="toggleMobileMenu()" class="block px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Học vấn</a>
-      <a href="#achievements" onclick="toggleMobileMenu()" class="block px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Thành tích</a>
-      <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 text-slate-300 hover:text-white hover:bg-slate-800 rounded-lg">Liên hệ</a>
-      <div class="pt-3 flex flex-wrap gap-2">
-        <button onclick="toggleMusicPlay();" class="flex-1 py-2 text-xs font-mono rounded-lg bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 flex items-center justify-center gap-2">
-          <i class="fa-solid fa-music"></i> <span id="mobile-music-btn-text">Phát nhạc Lofi</span>
-        </button>
-        <button onclick="openJsonModal(); toggleMobileMenu();" class="flex-1 py-2 text-xs font-mono rounded-lg bg-brand-500/20 text-brand-300 border border-brand-500/30 flex items-center justify-center gap-2">
-          <i class="fa-solid fa-code"></i> Xem JSON
-        </button>
-        <a href="https://github.com/tienmanh301" target="_blank" class="px-4 py-2 bg-slate-800 text-white rounded-lg flex items-center justify-center">
-          <i class="fa-brands fa-github"></i>
-        </a>
+      <div>
+        <h1 class="text-sm font-bold text-art-textWhite leading-tight">Nguyen Tien Manh</h1>
+        <p class="text-[11px] text-art-accent">Finance & Competitive Programmer</p>
       </div>
     </div>
+    <button id="mobileMenuBtn" class="p-2 rounded-lg bg-art-card text-art-accent hover:bg-art-cardHover border border-art-border focus:outline-none" aria-label="Toggle Menu">
+      <i class="fa-solid fa-bars-staggered text-lg"></i>
+    </button>
   </header>
 
-  <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-28">
+  <!-- Main Container Layout: 2 Columns on Desktop -->
+  <div class="max-w-[1600px] mx-auto px-0 sm:px-4 lg:px-6 py-0 lg:py-6 flex flex-col lg:flex-row gap-6 relative">
 
-    <!-- HERO SECTION -->
-    <section id="hero" class="pt-6 sm:pt-14 pb-4">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <!-- BACKDROP FOR MOBILE SIDEBAR -->
+    <div id="mobileBackdrop" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-45 hidden lg:hidden transition-opacity"></div>
+
+    <!-- ======================================================== -->
+    <!-- LEFT SIDEBAR (FIXED / STICKY ON DESKTOP) -->
+    <!-- ======================================================== -->
+    <aside id="sidebar" class="fixed lg:sticky top-0 lg:top-6 left-0 h-full lg:h-[calc(100vh-3rem)] w-[300px] sm:w-[320px] bg-art-sidebar z-50 flex flex-col justify-between border-r lg:border border-art-border lg:rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 -translate-x-full lg:translate-x-0">
+      
+      <!-- TOP PROFILE HEADER CARD -->
+      <div class="bg-[#242430] p-6 text-center relative border-b border-art-border">
+        <!-- Close button on mobile -->
+        <button id="closeSidebarBtn" class="lg:hidden absolute top-3 right-3 text-art-textMuted hover:text-art-accent">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+
+        <div class="relative w-24 h-24 mx-auto mb-3">
+          <!-- Outer glowing circle -->
+          <div class="w-full h-full rounded-full p-1 bg-gradient-to-tr from-art-accent to-yellow-600/30 shadow-gold-sm">
+            <div class="w-full h-full rounded-full overflow-hidden bg-art-card">
+              <img src="avatar.jpg" onerror="this.src='https://ui-avatars.com/api/?name=Nguyen+Tien+Manh&background=1e1e28&color=FFC107&size=200&bold=true'" alt="Nguyen Tien Manh" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <!-- Online status indicator -->
+          <div class="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-art-sidebar online-pulse" title="Available for FinTech & Tech Projects"></div>
+        </div>
+
+        <h2 class="text-base font-bold text-art-textWhite tracking-wide hover:text-art-accent transition-colors">
+          NGUYEN TIEN MANH
+        </h2>
+        <p class="text-xs text-art-textMuted mt-1 leading-snug">
+          Finance & Banking <span class="text-art-accent">|</span> Competitive Programmer
+        </p>
+        <span class="inline-block mt-2 text-[10px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-art-accent/10 text-art-accent border border-art-accent/20">
+          <i class="fa-solid fa-bolt mr-1"></i> FinTech Enthusiast
+        </span>
+      </div>
+
+      <!-- MIDDLE SCROLLABLE INFO & SKILLS BODY -->
+      <div class="flex-1 overflow-y-auto p-5 space-y-6 text-xs text-art-textLight">
         
-        <!-- Hero Text Content (Left Col) -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-          <!-- Status Pill -->
-          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-medium tracking-wide">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span class="w-2 h-2 rounded-full bg-emerald-400 -ml-4.5"></span>
-            <span>Sẵn sàng cho các cơ hội &amp; Thử thách mới</span>
+        <!-- Personal Quick Info Table -->
+        <div class="space-y-2.5 pb-4 border-b border-art-border">
+          <div class="flex justify-between items-center">
+            <span class="text-art-textWhite font-medium">Residence:</span>
+            <span class="text-art-textMuted font-mono">Vietnam</span>
           </div>
-
-          <!-- Title & Subtitle -->
-          <div class="space-y-3">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-              Xin chào, tôi là <br/>
-              <span class="gradient-text">Nguyễn Tiến Mạnh</span>
-            </h1>
-            <p class="text-lg sm:text-xl text-slate-300 font-medium">
-              Sinh viên Tài chính - Ngân hàng <span class="text-brand-400 font-semibold">(FTU Hà Nội)</span> &amp; Đam mê Thuật toán, FinTech.
-            </p>
+          <div class="flex justify-between items-center">
+            <span class="text-art-textWhite font-medium">City:</span>
+            <span class="text-art-textMuted font-mono">Ha Noi</span>
           </div>
+          <div class="flex justify-between items-center">
+            <span class="text-art-textWhite font-medium">University:</span>
+            <span class="text-art-accent font-mono font-medium">FTU (K64)</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-art-textWhite font-medium">Phone:</span>
+            <a href="tel:0964564955" class="text-art-textMuted hover:text-art-accent font-mono transition-colors">0964564955</a>
+          </div>
+        </div>
 
-          <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
-            Nền tảng vững chắc về <span class="text-slate-200 font-medium">Cấu trúc Dữ liệu &amp; Giải thuật</span>, kinh nghiệm ra đề và kiểm thử hệ thống Themis cho đội tuyển HSG, kết hợp cùng tư duy phân tích định lượng tài chính và ứng dụng Machine Learning / Data Analysis.
-          </p>
-
-          <!-- Quick Contact Badges -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs sm:text-sm text-slate-300 font-mono">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-darkCard/80 border border-darkBorder">
-              <i class="fa-solid fa-location-dot text-rose-400"></i> Hà Nội, Việt Nam
+        <!-- Circular Skill Rings (Key Competencies) -->
+        <div class="pb-4 border-b border-art-border">
+          <h3 class="text-xs font-semibold text-art-textWhite uppercase tracking-wider mb-3">
+            Core Competencies
+          </h3>
+          <div class="grid grid-cols-3 gap-2 text-center">
+            <!-- Ring 1: C/C++ -->
+            <div class="flex flex-col items-center">
+              <div class="relative w-14 h-14">
+                <svg class="w-full h-full" viewBox="0 0 36 36">
+                  <path class="text-gray-800" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  <path class="text-art-accent progress-ring__circle" stroke-width="3" stroke-dasharray="92, 100" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center font-mono text-[11px] font-bold text-art-textWhite">
+                  92%
+                </div>
+              </div>
+              <span class="mt-1 text-[11px] font-medium text-art-textLight">C / C++</span>
             </div>
-            <button onclick="copyToClipboard('0964564955', 'Số điện thoại')" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-darkCard/80 border border-darkBorder hover:border-brand-500/50 hover:text-white transition-all cursor-pointer">
-              <i class="fa-solid fa-phone text-emerald-400"></i> 0964564955
-              <i class="fa-regular fa-copy text-xs text-slate-500 ml-1"></i>
-            </button>
-            <button onclick="copyToClipboard('k64.2513310134@ftu.edu.vn', 'Email')" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-darkCard/80 border border-darkBorder hover:border-brand-500/50 hover:text-white transition-all cursor-pointer">
-              <i class="fa-solid fa-envelope text-brand-400"></i> k64.2513310134@ftu.edu.vn
-              <i class="fa-regular fa-copy text-xs text-slate-500 ml-1"></i>
-            </button>
-          </div>
 
-          <!-- Hero Action Buttons -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="#contact" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-cyan-600 hover:from-brand-500 hover:to-cyan-500 text-white font-semibold text-sm shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all flex items-center gap-2">
-              <i class="fa-solid fa-paper-plane"></i> Liên hệ với tôi
-            </a>
-            <a href="https://github.com/tienmanh301" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-200 hover:text-white font-semibold text-sm hover:-translate-y-0.5 transition-all flex items-center gap-2">
-              <i class="fa-brands fa-github text-lg"></i> GitHub Profile
-            </a>
-            <button onclick="toggleMusicPlay()" class="px-4 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-cyan-500/30 text-cyan-300 font-mono text-xs hover:-translate-y-0.5 transition-all flex items-center gap-2">
-              <i class="fa-solid fa-headphones text-cyan-400"></i> <span id="hero-music-btn-text">Bật Nhạc Lofi</span>
-            </button>
-          </div>
+            <!-- Ring 2: Python -->
+            <div class="flex flex-col items-center">
+              <div class="relative w-14 h-14">
+                <svg class="w-full h-full" viewBox="0 0 36 36">
+                  <path class="text-gray-800" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  <path class="text-art-accent progress-ring__circle" stroke-width="3" stroke-dasharray="88, 100" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center font-mono text-[11px] font-bold text-art-textWhite">
+                  88%
+                </div>
+              </div>
+              <span class="mt-1 text-[11px] font-medium text-art-textLight">Python</span>
+            </div>
 
-          <!-- Quick Stats Grid -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
-            <div class="glass-card p-4 rounded-xl text-center lg:text-left">
-              <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">100+</div>
-              <div class="text-xs text-slate-400 mt-1">Thuật toán solved (VNOI/OJ)</div>
-            </div>
-            <div class="glass-card p-4 rounded-xl text-center lg:text-left">
-              <div class="text-2xl sm:text-3xl font-extrabold text-cyan-400 font-mono">Giải Ba</div>
-              <div class="text-xs text-slate-400 mt-1">HSG Tin học Tỉnh Nghệ An</div>
-            </div>
-            <div class="glass-card p-4 rounded-xl text-center lg:text-left col-span-2 sm:col-span-1">
-              <div class="text-2xl sm:text-3xl font-extrabold text-brand-400 font-mono">O(N log N)</div>
-              <div class="text-xs text-slate-400 mt-1">Tối ưu hiệu năng &amp; Bộ nhớ</div>
+            <!-- Ring 3: Algorithms -->
+            <div class="flex flex-col items-center">
+              <div class="relative w-14 h-14">
+                <svg class="w-full h-full" viewBox="0 0 36 36">
+                  <path class="text-gray-800" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                  <path class="text-art-accent progress-ring__circle" stroke-width="3" stroke-dasharray="90, 100" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center font-mono text-[11px] font-bold text-art-textWhite">
+                  90%
+                </div>
+              </div>
+              <span class="mt-1 text-[11px] font-medium text-art-textLight">Algorithms</span>
             </div>
           </div>
         </div>
 
-        <!-- Hero Avatar Card (Right Col) -->
-        <div class="lg:col-span-5 flex justify-center">
-          <div class="relative group">
-            <!-- Glow Background Ring -->
-            <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-500 via-cyan-500 to-purple-600 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+        <!-- Linear Skill Progress Bars -->
+        <div class="space-y-3 pb-4 border-b border-art-border">
+          <h3 class="text-xs font-semibold text-art-textWhite uppercase tracking-wider mb-2">
+            Languages & Tech
+          </h3>
+
+          <!-- Pascal -->
+          <div>
+            <div class="flex justify-between text-[11px] mb-1">
+              <span class="text-art-textWhite">Pascal</span>
+              <span class="text-art-textMuted font-mono">85%</span>
+            </div>
+            <div class="w-full bg-art-darkBg rounded-full h-1.5 overflow-hidden">
+              <div class="bg-art-accent h-1.5 rounded-full shadow-gold-sm transition-all duration-1000" style="width: 85%"></div>
+            </div>
+          </div>
+
+          <!-- SQL -->
+          <div>
+            <div class="flex justify-between text-[11px] mb-1">
+              <span class="text-art-textWhite">SQL & Database Querying</span>
+              <span class="text-art-textMuted font-mono">78%</span>
+            </div>
+            <div class="w-full bg-art-darkBg rounded-full h-1.5 overflow-hidden">
+              <div class="bg-art-accent h-1.5 rounded-full shadow-gold-sm transition-all duration-1000" style="width: 78%"></div>
+            </div>
+          </div>
+
+          <!-- HTML / Web Tech -->
+          <div>
+            <div class="flex justify-between text-[11px] mb-1">
+              <span class="text-art-textWhite">HTML5 / Frontend Foundations</span>
+              <span class="text-art-textMuted font-mono">75%</span>
+            </div>
+            <div class="w-full bg-art-darkBg rounded-full h-1.5 overflow-hidden">
+              <div class="bg-art-accent h-1.5 rounded-full shadow-gold-sm transition-all duration-1000" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Knowledge Checkpoints -->
+        <div class="space-y-2 pb-2">
+          <h3 class="text-xs font-semibold text-art-textWhite uppercase tracking-wider mb-2">
+            Key Knowledge
+          </h3>
+          <div class="flex items-center gap-2 text-art-textLight text-[11px]">
+            <i class="fa-solid fa-check text-art-accent text-[10px]"></i>
+            <span>Dynamic Programming & Graph Theory</span>
+          </div>
+          <div class="flex items-center gap-2 text-art-textLight text-[11px]">
+            <i class="fa-solid fa-check text-art-accent text-[10px]"></i>
+            <span>Segment Tree & Fenwick Tree (BIT)</span>
+          </div>
+          <div class="flex items-center gap-2 text-art-textLight text-[11px]">
+            <i class="fa-solid fa-check text-art-accent text-[10px]"></i>
+            <span>Financial Tech & ML in Finance</span>
+          </div>
+          <div class="flex items-center gap-2 text-art-textLight text-[11px]">
+            <i class="fa-solid fa-check text-art-accent text-[10px]"></i>
+            <span>Themis Auto-grader & Test Engineering</span>
+          </div>
+          <div class="flex items-center gap-2 text-art-textLight text-[11px]">
+            <i class="fa-solid fa-check text-art-accent text-[10px]"></i>
+            <span>AI-Assisted Software Development</span>
+          </div>
+        </div>
+
+        <!-- Quick Action: Download CV / Data -->
+        <div class="pt-2">
+          <a href="Resume___Mạnh.pdf" download class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-art-card hover:bg-art-cardHover border border-art-accent/30 text-art-accent hover:border-art-accent text-xs font-semibold uppercase tracking-wider transition-all duration-200 group shadow-sm">
+            <span>DOWNLOAD RESUME</span>
+            <i class="fa-solid fa-download group-hover:translate-y-0.5 transition-transform"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM SOCIAL CONTACT BAR (PINNED) -->
+      <div class="bg-[#242430] py-3.5 px-5 flex items-center justify-around border-t border-art-border text-art-textMuted text-base">
+        <a href="https://github.com/tienmanh301" target="_blank" rel="noopener noreferrer" class="hover:text-art-accent transition-colors hover:scale-110 transform" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="mailto:k64.2513310134@ftu.edu.vn" class="hover:text-art-accent transition-colors hover:scale-110 transform" title="Email FTU">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <a href="tel:0964564955" class="hover:text-art-accent transition-colors hover:scale-110 transform" title="Call Phone">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <a href="data.json" target="_blank" class="hover:text-art-accent transition-colors hover:scale-110 transform font-mono text-xs font-bold border border-art-textMuted/40 px-1.5 py-0.5 rounded" title="Raw JSON Data">
+          JSON
+        </a>
+      </div>
+
+    </aside>
+
+    <!-- ======================================================== -->
+    <!-- MAIN CONTENT AREA (RIGHT COLUMN) -->
+    <!-- ======================================================== -->
+    <main class="flex-1 min-w-0 bg-art-bg lg:rounded-2xl border-y lg:border border-art-border overflow-hidden shadow-2xl flex flex-col">
+
+      <!-- TOP NAV / BREADCRUMB BAR -->
+      <nav class="bg-art-sidebar/80 backdrop-blur-md px-6 py-3.5 border-b border-art-border flex flex-wrap items-center justify-between gap-4 sticky top-0 lg:static z-30">
+        <!-- Quick Section Anchors -->
+        <div class="hidden md:flex items-center gap-6 text-xs font-medium uppercase tracking-wider">
+          <a href="#hero" class="text-art-accent hover:text-art-accentLight transition-colors">Home</a>
+          <a href="#stats" class="text-art-textMuted hover:text-art-accent transition-colors">Overview</a>
+          <a href="#experience" class="text-art-textMuted hover:text-art-accent transition-colors">Experience</a>
+          <a href="#education" class="text-art-textMuted hover:text-art-accent transition-colors">Education</a>
+          <a href="#skills" class="text-art-textMuted hover:text-art-accent transition-colors">Skills</a>
+          <a href="#achievements" class="text-art-textMuted hover:text-art-accent transition-colors">Achievements</a>
+          <a href="#contact" class="text-art-textMuted hover:text-art-accent transition-colors">Contact</a>
+        </div>
+
+        <!-- Live Status Pill -->
+        <div class="flex items-center gap-2 text-xs font-mono bg-art-darkBg/80 border border-art-border px-3 py-1.5 rounded-full ml-auto">
+          <span class="w-2 h-2 rounded-full bg-art-accent glow-dot"></span>
+          <span class="text-art-textLight text-[11px]">FTU Finance & FinTech Space</span>
+        </div>
+      </nav>
+
+      <!-- SCROLLABLE SECTIONS WRAPPER -->
+      <div class="p-4 sm:p-6 lg:p-8 space-y-12 art-grid-bg">
+
+        <!-- ========================================== -->
+        <!-- 1. HERO BANNER -->
+        <!-- ========================================== -->
+        <section id="hero" class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#232332] via-[#1c1c27] to-[#161622] border border-art-border p-6 sm:p-10 lg:p-12 shadow-art-card">
+          <!-- Background decorative glow -->
+          <div class="absolute -top-24 -right-24 w-80 h-80 bg-art-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="relative z-10 max-w-3xl">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-art-accent/10 border border-art-accent/30 text-art-accent text-xs font-mono font-medium mb-4">
+              <i class="fa-solid fa-code"></i>
+              <span>Competitive Programmer & Quantitative Finance Enthusiast</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-art-textWhite leading-tight tracking-tight">
+              Discover my <span class="text-transparent bg-clip-text bg-gradient-to-r from-art-accent via-yellow-400 to-amber-500">Algorithmic</span> & <br class="hidden sm:inline">Financial Tech Space!
+            </h1>
+
+            <!-- Dynamic Typing Code Effect -->
+            <div class="mt-4 sm:mt-5 text-sm sm:text-base font-mono bg-[#14141d]/90 border border-art-border rounded-xl p-3.5 sm:p-4 inline-block max-w-full text-art-textLight shadow-inner">
+              <span class="text-art-accent font-bold">&lt;code&gt;</span>
+              <span id="typewriterText" class="text-art-textWhite font-medium"></span><span class="typewriter-cursor">&nbsp;</span>
+              <span class="text-art-accent font-bold">&lt;/code&gt;</span>
+            </div>
+
+            <!-- Description -->
+            <p class="mt-5 text-art-textMuted text-xs sm:text-sm leading-relaxed max-w-2xl">
+              Sinh viên ngành <strong class="text-art-textWhite font-semibold">Tài chính - Ngân hàng</strong> tại <span class="text-art-accent font-medium">Đại học Ngoại thương (FTU)</span> với nền tảng chuyên sâu về <strong class="text-art-textWhite font-semibold">Cấu trúc Dữ liệu & Giải thuật</strong> (Giải Ba HSG Tin học cấp tỉnh). Đam mê ứng dụng Khoa học Dữ liệu, Machine Learning và thuật toán tối ưu vào các mô hình Tài chính - Định lượng (FinTech).
+            </p>
+
+            <!-- Action CTA Buttons -->
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a href="#experience" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-art-accent hover:bg-art-accentHover text-art-darkBg font-bold text-xs uppercase tracking-wider shadow-gold-glow hover:shadow-gold-glow transition-all duration-300 transform hover:-translate-y-0.5">
+                <span>EXPLORE NOW</span>
+                <i class="fa-solid fa-arrow-right text-xs"></i>
+              </a>
+
+              <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-art-card hover:bg-art-cardHover border border-art-border hover:border-art-accent text-art-textWhite font-semibold text-xs uppercase tracking-wider transition-all duration-300">
+                <i class="fa-solid fa-envelope text-art-accent"></i>
+                <span>CONTACT ME</span>
+              </a>
+
+              <a href="https://github.com/tienmanh301" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-transparent hover:bg-art-card/60 text-art-textMuted hover:text-art-textWhite font-mono text-xs transition-colors">
+                <i class="fa-brands fa-github text-base"></i>
+                <span>tienmanh301</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 2. STATS COUNTER BAR -->
+        <!-- ========================================== -->
+        <section id="stats" class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          
+          <!-- Stat 1: 100+ Problems -->
+          <div class="art-card rounded-2xl p-5 sm:p-6 text-center group">
+            <div class="text-3xl sm:text-4xl font-extrabold text-art-accent font-mono tracking-tight group-hover:scale-105 transition-transform">
+              <span class="counter" data-target="100">0</span><span class="text-yellow-400">+</span>
+            </div>
+            <div class="mt-2 text-xs font-semibold text-art-textWhite">Solved Problems</div>
+            <p class="text-[11px] text-art-textMuted mt-1">VNOI, LQDOJ & LCOJ</p>
+          </div>
+
+          <!-- Stat 2: 3rd Place Award -->
+          <div class="art-card rounded-2xl p-5 sm:p-6 text-center group">
+            <div class="text-3xl sm:text-4xl font-extrabold text-art-accent font-mono tracking-tight group-hover:scale-105 transition-transform">
+              <span>3rd</span>
+            </div>
+            <div class="mt-2 text-xs font-semibold text-art-textWhite">Provincial IT Award</div>
+            <p class="text-[11px] text-art-textMuted mt-1">Nghe An Province (2024)</p>
+          </div>
+
+          <!-- Stat 3: 2+ Years Experience -->
+          <div class="art-card rounded-2xl p-5 sm:p-6 text-center group">
+            <div class="text-3xl sm:text-4xl font-extrabold text-art-accent font-mono tracking-tight group-hover:scale-105 transition-transform">
+              <span class="counter" data-target="2">0</span><span class="text-yellow-400">+</span> <span class="text-sm font-sans font-normal text-art-textLight">Years</span>
+            </div>
+            <div class="mt-2 text-xs font-semibold text-art-textWhite">Competitive Programming</div>
+            <p class="text-[11px] text-art-textMuted mt-1">Problem Setter & Coach</p>
+          </div>
+
+          <!-- Stat 4: 10+ Tech Stack -->
+          <div class="art-card rounded-2xl p-5 sm:p-6 text-center group">
+            <div class="text-3xl sm:text-4xl font-extrabold text-art-accent font-mono tracking-tight group-hover:scale-105 transition-transform">
+              <span class="counter" data-target="10">0</span><span class="text-yellow-400">+</span>
+            </div>
+            <div class="mt-2 text-xs font-semibold text-art-textWhite">Tech & Tool Stack</div>
+            <p class="text-[11px] text-art-textMuted mt-1">C++, Python, SQL & ML</p>
+          </div>
+
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 3. SERVICES & SKILLS HIGHLIGHT CARDS -->
+        <!-- ========================================== -->
+        <section id="services" class="space-y-6">
+          <div class="flex items-center justify-between border-b border-art-border pb-3">
+            <div>
+              <h2 class="text-xl sm:text-2xl font-bold text-art-textWhite flex items-center gap-2.5">
+                <i class="fa-solid fa-layer-group text-art-accent"></i>
+                <span>Skills & Expertise Fields</span>
+              </h2>
+              <p class="text-xs text-art-textMuted mt-1">Lĩnh vực chuyên môn về giải thuật, hệ thống chấm điểm và công nghệ tài chính</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <div class="relative w-72 sm:w-80 md:w-96 rounded-2xl overflow-hidden glass-card p-3 shadow-2xl">
-              <div class="relative h-96 sm:h-[420px] rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center">
-                <img 
-                  src="./avatar.jpg" 
-                  alt="Nguyen Tien Manh" 
-                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80';"
-                />
-                
-                <!-- Floating Info Badge -->
-                <div class="absolute bottom-4 inset-x-4 p-3.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-white/10 shadow-lg flex items-center justify-between">
-                  <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg">
-                      <i class="fa-solid fa-graduation-cap"></i>
-                    </div>
-                    <div>
-                      <h4 class="text-xs font-bold text-white">Đại học Ngoại Thương</h4>
-                      <p class="text-[11px] text-slate-400">Khóa K64 &bull; Finance &amp; FinTech</p>
-                    </div>
+            <!-- Card 1: Competitive Programming -->
+            <div class="art-card rounded-2xl p-6 flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-art-accent/10 border border-art-accent/30 flex items-center justify-center text-art-accent text-xl mb-5 shadow-gold-sm">
+                  <i class="fa-solid fa-code-merge"></i>
+                </div>
+                <h3 class="text-base font-bold text-art-textWhite mb-2">Algorithms & Problem Solving</h3>
+                <p class="text-xs text-art-textMuted leading-relaxed mb-4">
+                  Thành thạo cấu trúc dữ liệu nâng cao (Segment Tree, Fenwick Tree, DSU), Quy hoạch động (DP), Lý thuyết đồ thị và Thuật toán số học. Tối ưu thời gian và bộ nhớ chuẩn $O(N \log N)$ và $O(N)$.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-3 border-t border-art-border/60">
+                <span class="art-tag text-[10px] px-2.5 py-1 rounded-md">Segment Tree</span>
+                <span class="art-tag text-[10px] px-2.5 py-1 rounded-md">Dynamic Prog</span>
+                <span class="art-tag text-[10px] px-2.5 py-1 rounded-md">Graph Theory</span>
+                <span class="art-tag text-[10px] px-2.5 py-1 rounded-md">Hashing</span>
+              </div>
+            </div>
+
+            <!-- Card 2: Quantitative Finance & FinTech -->
+            <div class="art-card rounded-2xl p-6 flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-art-accent/10 border border-art-accent/30 flex items-center justify-center text-art-accent text-xl mb-5 shadow-gold-sm">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="text-base font-bold text-art-textWhite mb-2">Quantitative Finance & FinTech</h3>
+                <p class="text-xs text-art-textMuted leading-relaxed mb-4">
+                  Ứng dụng Python, Machine Learning và tính toán khoa học vào phân tích dữ liệu tài chính, mô hình định lượng và công nghệ tài chính ngân hàng tại Đại học Ngoại Thương.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-3 border-t border-art-border/60">
+                <span class="art-tag text-[10px] px-2.5 py-1 rounded-md">Python Data</span>
+                <span class="art-tag text-[10px] px-2.5 py-1 rounded-md">FinTech</span>
+                <span class="art-tag text-[10px] px-2.5 py-1 rounded-md">Financial ML</span>
+                <span class="art-tag text-[10px] px-2.5 py-1 rounded-md">SQL Analytics</span>
+              </div>
+            </div>
+
+            <!-- Card 3: Themis & Testcase Engineering -->
+            <div class="art-card rounded-2xl p-6 flex flex-col justify-between">
+              <div>
+                <div class="w-12 h-12 rounded-xl bg-art-accent/10 border border-art-accent/30 flex items-center justify-center text-art-accent text-xl mb-5 shadow-gold-sm">
+                  <i class="fa-solid fa-vial-circle-check"></i>
+                </div>
+                <h3 class="text-base font-bold text-art-textWhite mb-2">Problem Setting & Testing</h3>
+                <p class="text-xs text-art-textMuted leading-relaxed mb-4">
+                  Kinh nghiệm cấu hình và vận hành hệ thống chấm điểm tự động Themis, sinh bộ testcases stress-testing chặt chẽ, bắt lỗi TLE/MLE và đánh giá bài nộp của đội tuyển HSG.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 pt-3 border-t border-art-border/60">
+                <span class="art-tag text-[10px] px-2.5 py-1 rounded-md">Themis</span>
+                <span class="art-tag text-[10px] px-2.5 py-1 rounded-md">Stress Testing</span>
+                <span class="art-tag text-[10px] px-2.5 py-1 rounded-md">Edge Cases</span>
+                <span class="art-tag text-[10px] px-2.5 py-1 rounded-md">Optimization</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 4. EXPERIENCE & EDUCATION (2-COLUMN GRID) -->
+        <!-- ========================================== -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- WORK EXPERIENCE COLUMN -->
+          <section id="experience" class="space-y-6">
+            <div class="flex items-center gap-3 border-b border-art-border pb-3">
+              <div class="w-8 h-8 rounded-lg bg-art-accent/10 flex items-center justify-center text-art-accent text-sm">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+              <h2 class="text-xl font-bold text-art-textWhite">Work Experience</h2>
+            </div>
+
+            <div class="space-y-6">
+              
+              <!-- Experience Item 1 -->
+              <div class="art-card rounded-2xl p-6 relative">
+                <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+                  <div>
+                    <h3 class="text-base font-bold text-art-textWhite">High School Gifted IT Team</h3>
+                    <p class="text-xs font-medium text-art-accent mt-0.5">Competitive Programming Technical Assistant & Problem Setter</p>
                   </div>
-                  <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded border border-emerald-500/20">2026+</span>
+                  <span class="font-mono text-xs px-2.5 py-1 rounded-full bg-art-darkBg border border-art-border text-art-textMuted">
+                    2024
+                  </span>
+                </div>
+
+                <ul class="space-y-2.5 text-xs text-art-textLight leading-relaxed mt-4">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-art-accent mt-1.5 shrink-0"></span>
+                    <span>Cấu hình và vận hành hệ thống chấm điểm tự động <strong class="text-art-textWhite">Themis</strong> để thực thi và đánh giá các bộ bài tập Cấu trúc Dữ liệu & Giải thuật nâng cao cho đội tuyển học sinh giỏi tỉnh.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-art-accent mt-1.5 shrink-0"></span>
+                    <span>Thiết kế, kiểm thử và chạy <strong class="text-art-textWhite">stress-testing</strong> bộ testcase toàn diện bao quát các trường hợp biên (edge cases), bảo đảm ràng buộc độ phức tạp thời gian/bộ nhớ $O(N \log N)$, $O(N)$.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-art-accent mt-1.5 shrink-0"></span>
+                    <span>Phân tích và gỡ lỗi code học sinh nộp, đưa ra nhận xét kỹ thuật chi tiết về tối ưu hàm chuyển trạng thái Quy hoạch động, duyệt đồ thị và cấu trúc dữ liệu nâng cao (<strong class="text-art-accent">Segment Tree, Fenwick Tree</strong>).</span>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Experience Item 2 -->
+              <div class="art-card rounded-2xl p-6 relative">
+                <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+                  <div>
+                    <h3 class="text-base font-bold text-art-textWhite">VNOI & Online Judge Platforms</h3>
+                    <p class="text-xs font-medium text-art-accent mt-0.5">Algorithm Practice & Problem Solving</p>
+                  </div>
+                  <span class="font-mono text-xs px-2.5 py-1 rounded-full bg-art-darkBg border border-art-border text-art-textMuted">
+                    2024
+                  </span>
+                </div>
+
+                <ul class="space-y-2.5 text-xs text-art-textLight leading-relaxed mt-4">
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-art-accent mt-1.5 shrink-0"></span>
+                    <span>Giải và tối ưu hơn <strong class="text-art-textWhite">100 bài toán thuật toán nâng cao</strong> trên các nền tảng VNOI, LQDOJ và LCOJ; chuyên sâu về Dynamic Programming, Graph Theory, Number Theory và String Hashing.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-art-accent mt-1.5 shrink-0"></span>
+                    <span>Nghiên cứu contest editorials và tái cấu trúc thuật toán để loại bỏ triệt để các lỗi thắt cổ chai <strong class="text-yellow-400">TLE</strong> (Time Limit Exceeded) và <strong class="text-yellow-400">MLE</strong> (Memory Limit Exceeded).</span>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- EDUCATION COLUMN -->
+          <section id="education" class="space-y-6">
+            <div class="flex items-center gap-3 border-b border-art-border pb-3">
+              <div class="w-8 h-8 rounded-lg bg-art-accent/10 flex items-center justify-center text-art-accent text-sm">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <h2 class="text-xl font-bold text-art-textWhite">Education</h2>
+            </div>
+
+            <div class="space-y-6">
+              
+              <!-- Education 1: FTU -->
+              <div class="art-card rounded-2xl p-6 relative border-l-4 border-l-art-accent">
+                <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                  <div>
+                    <h3 class="text-base font-bold text-art-textWhite">Foreign Trade University (FTU)</h3>
+                    <p class="text-xs text-art-accent font-medium mt-0.5">Ha Noi, Vietnam</p>
+                  </div>
+                  <span class="font-mono text-xs px-2.5 py-1 rounded-full bg-art-accent/10 text-art-accent border border-art-accent/20 font-semibold">
+                    2026 – Present
+                  </span>
+                </div>
+
+                <div class="mt-3 text-xs text-art-textLight">
+                  <div class="font-semibold text-art-textWhite flex items-center gap-2">
+                    <i class="fa-solid fa-book-bookmark text-art-accent text-xs"></i>
+                    <span>Chuyên ngành: Tài chính & Ngân hàng (Finance & Banking)</span>
+                  </div>
+                  
+                  <div class="mt-3 p-3.5 rounded-xl bg-art-darkBg/90 border border-art-border space-y-2">
+                    <div class="text-[11px] font-semibold text-art-accent uppercase tracking-wider">
+                      Related Key Coursework:
+                    </div>
+                    <ul class="space-y-1.5 text-xs text-art-textMuted">
+                      <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-angle-right text-art-accent text-[10px]"></i>
+                        <span>Programming for Data Analysis and Scientific Computing</span>
+                      </li>
+                      <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-angle-right text-art-accent text-[10px]"></i>
+                        <span>Financial Technology (FinTech) & ML Applications in Finance</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
-              <!-- Terminal style footer tag inside card -->
-              <div class="pt-3 pb-1 px-2 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                <span class="flex items-center gap-1.5"><i class="fa-solid fa-terminal text-brand-400"></i> github.com/tienmanh301</span>
-                <span class="text-cyan-400">#CP #Python #C++</span>
+              <!-- Education 2: High School -->
+              <div class="art-card rounded-2xl p-6 relative">
+                <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                  <div>
+                    <h3 class="text-base font-bold text-art-textWhite">Dien Chau 4 High School</h3>
+                    <p class="text-xs text-art-textMuted mt-0.5">Dien Chau, Nghe An Province</p>
+                  </div>
+                  <span class="font-mono text-xs px-2.5 py-1 rounded-full bg-art-darkBg border border-art-border text-art-textMuted">
+                    2022 – 2025
+                  </span>
+                </div>
+
+                <div class="mt-3 text-xs text-art-textLight">
+                  <div class="font-medium text-art-textWhite flex items-center gap-2">
+                    <i class="fa-solid fa-atom text-art-accent text-xs"></i>
+                    <span>Natural Sciences Specialized Class (Lớp Chuyên Tự Nhiên)</span>
+                  </div>
+                  <p class="text-art-textMuted mt-2 text-xs leading-relaxed">
+                    Thành viên đội tuyển mũi nhọn dự thi Học sinh giỏi môn Tin học cấp tỉnh Nghệ An.
+                  </p>
+                </div>
               </div>
+
             </div>
-          </div>
+          </section>
+
         </div>
 
-      </div>
-    </section>
-
-    <!-- ABOUT & STRENGTHS SECTION -->
-    <section id="about" class="space-y-10">
-      <div class="text-center space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-mono uppercase tracking-widest">
-          Giới thiệu tổng quan
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
-          Sự kết hợp giữa <span class="gradient-text">Tư duy Giải thuật &amp; Tài chính</span>
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-          Định hướng phát triển chuyên sâu trong mảng Công nghệ Tài chính (FinTech), Phân tích Định lượng dữ liệu và Kỹ thuật phần mềm hiệu năng cao.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <div class="glass-card p-6 rounded-2xl space-y-4 hover:-translate-y-1 transition-all">
-          <div class="w-12 h-12 rounded-xl bg-brand-500/20 border border-brand-500/30 text-brand-400 flex items-center justify-center text-xl shadow-lg">
-            <i class="fa-solid fa-microchip"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">Cấu trúc Dữ liệu &amp; Thuật toán</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Thành thạo các giải thuật nâng cao như Quy hoạch động, Đồ thị, Lý thuyết số, Cây phân đoạn (Segment Tree), Fenwick Tree (BIT), DSU với tư duy tối ưu độ phức tạp thời gian và bộ nhớ.
-          </p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="glass-card p-6 rounded-2xl space-y-4 hover:-translate-y-1 transition-all">
-          <div class="w-12 h-12 rounded-xl bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-xl shadow-lg">
-            <i class="fa-solid fa-chart-line"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">Tài chính &amp; Khoa học Dữ liệu</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Sinh viên chuyên ngành Tài chính - Ngân hàng tại Đại học Ngoại Thương. Tập trung nghiên cứu Lập trình phân tích dữ liệu, Công nghệ tài chính (FinTech) và ứng dụng Machine Learning trong phân tích thị trường.
-          </p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="glass-card p-6 rounded-2xl space-y-4 hover:-translate-y-1 transition-all">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-xl shadow-lg">
-            <i class="fa-solid fa-brain"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">AI &amp; Tối ưu Hóa Quy trình</h3>
-          <p class="text-slate-400 text-sm leading-relaxed">
-            Áp dụng các công cụ AI hiện đại (AI-Assisted Software Development) để tăng tốc độ viết code, tự động hóa kiểm thử, phân tích mã nguồn và giải quyết bài toán nhanh chóng, chính xác.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORK EXPERIENCE SECTION -->
-    <section id="experience" class="space-y-10">
-      <div class="text-center space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono uppercase tracking-widest">
-          Kinh nghiệm thực tiễn
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
-          Quá trình Làm việc &amp; Đóng góp
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-          Kinh nghiệm quản trị hệ thống chấm điểm tự động, thiết kế bộ testcase chuyên sâu và giải thuật trên các nền tảng Online Judge.
-        </p>
-      </div>
-
-      <div class="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-12">
-        
-        <!-- Experience Item 1 -->
-        <div class="relative pl-6 sm:pl-10 group">
-          <!-- Timeline Pin -->
-          <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-darkCard border-2 border-brand-500 text-brand-400 flex items-center justify-center text-xs group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-white transition-all shadow-lg shadow-brand-500/30">
-            <i class="fa-solid fa-code-branch"></i>
-          </div>
-
-          <!-- Date Label for Desktop -->
-          <div class="hidden md:block absolute -left-36 top-2 text-right w-24">
-            <span class="px-2.5 py-1 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono font-semibold">2024</span>
-          </div>
-
-          <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-4 hover:border-brand-500/40 transition-all">
-            <div class="flex flex-wrap items-start justify-between gap-2">
-              <div>
-                <span class="md:hidden inline-block mb-2 px-2.5 py-0.5 rounded bg-brand-500/10 text-brand-400 text-xs font-mono font-semibold">2024</span>
-                <h3 class="text-xl font-bold text-white group-hover:text-brand-300 transition-colors">High School Gifted IT Team</h3>
-                <p class="text-sm font-medium text-cyan-400">Competitive Programming Technical Assistant &amp; Problem Setter</p>
-              </div>
-              <span class="px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 text-xs font-mono">Themis &bull; Problem Setting</span>
-            </div>
-
-            <ul class="space-y-3 text-slate-300 text-sm leading-relaxed list-disc list-outside pl-4 marker:text-brand-500">
-              <li>
-                <strong class="text-white">Vận hành &amp; Cấu hình hệ thống Themis:</strong> Trực tiếp thiết lập và quản lý hệ thống chấm điểm tự động Themis để tổ chức thi đấu và chấm bài tập Cấu trúc Dữ liệu &amp; Giải thuật phức tạp cho đội tuyển học sinh giỏi cấp Tỉnh.
-              </li>
-              <li>
-                <strong class="text-white">Thiết kế &amp; Stress-test bộ Testcase:</strong> Xây dựng, kiểm thử và ép tải toàn diện các bộ testcase đặc biệt (edge cases, corner cases), đảm bảo thực thi chuẩn xác các giới hạn thời gian và không gian khắt khe <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-brand-300">O(N log N)</code>, <code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-brand-300">O(N)</code>.
-              </li>
-              <li>
-                <strong class="text-white">Phân tích &amp; Debug mã nguồn:</strong> Rà soát và gỡ lỗi các bài nộp của học sinh, cung cấp phản hồi kỹ thuật chuyên sâu về tối ưu hàm chuyển trạng thái Quy hoạch động, duyệt Đồ thị và các cấu trúc dữ liệu nâng cao như <em>Segment Tree</em>, <em>Fenwick Tree</em>.
-              </li>
-            </ul>
-
-            <!-- Tech Badges -->
-            <div class="flex flex-wrap gap-2 pt-2">
-              <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/90 text-slate-300 border border-slate-700/60">Themis</span>
-              <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/90 text-slate-300 border border-slate-700/60">C++</span>
-              <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/90 text-slate-300 border border-slate-700/60">Testcase Engineering</span>
-              <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/90 text-slate-300 border border-slate-700/60">Segment Tree</span>
-              <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/90 text-slate-300 border border-slate-700/60">Stress Testing</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Experience Item 2 -->
-        <div class="relative pl-6 sm:pl-10 group">
-          <!-- Timeline Pin -->
-          <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-darkCard border-2 border-cyan-500 text-cyan-400 flex items-center justify-center text-xs group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-white transition-all shadow-lg shadow-cyan-500/30">
-            <i class="fa-solid fa-laptop-code"></i>
-          </div>
-
-          <!-- Date Label for Desktop -->
-          <div class="hidden md:block absolute -left-36 top-2 text-right w-24">
-            <span class="px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono font-semibold">2024</span>
-          </div>
-
-          <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-4 hover:border-cyan-500/40 transition-all">
-            <div class="flex flex-wrap items-start justify-between gap-2">
-              <div>
-                <span class="md:hidden inline-block mb-2 px-2.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 text-xs font-mono font-semibold">2024</span>
-                <h3 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">VNOI &amp; Online Judge Platforms</h3>
-                <p class="text-sm font-medium text-brand-400">Algorithm Practice &amp; Problem Solving</p>
-              </div>
-              <span class="px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-slate-300 text-xs font-mono">Competitive Programming</span>
-            </div>
-
-            <ul class="space-y-3 text-slate-300 text-sm leading-relaxed list-disc list-outside pl-4 marker:text-cyan-500">
-              <li>
-                <strong class="text-white">Giải quyết 100+ bài toán giải thuật:</strong> Luyện tập và tối ưu hơn 100 bài toán trên các nền tảng VNOI, LQDOJ, LCOJ, chuyên sâu về <em>Dynamic Programming</em>, <em>Graph Theory</em>, <em>Number Theory</em> và <em>String Hashing</em>.
-              </li>
-              <li>
-                <strong class="text-white">Phân tích Editorial &amp; Refactoring:</strong> Nghiên cứu lời giải các kỳ thi, tái cấu trúc thuật toán chưa tối ưu để loại bỏ triệt để các lỗi thắt cổ chai về thời gian (<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-rose-400">TLE - Time Limit Exceeded</code>) và bộ nhớ (<code class="font-mono text-xs bg-slate-800 px-1.5 py-0.5 rounded text-rose-400">MLE - Memory Limit Exceeded</code>).
-              </li>
-            </ul>
-
-            <!-- Tech Badges -->
-            <div class="flex flex-wrap gap-2 pt-2">
-              <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/90 text-slate-300 border border-slate-700/60">VNOI</span>
-              <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/90 text-slate-300 border border-slate-700/60">LQDOJ</span>
-              <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/90 text-slate-300 border border-slate-700/60">Graph Theory</span>
-              <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/90 text-slate-300 border border-slate-700/60">Dynamic Programming</span>
-              <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-800/90 text-slate-300 border border-slate-700/60">String Hashing</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="space-y-10">
-      <div class="text-center space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono uppercase tracking-widest">
-          Năng lực chuyên môn
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
-          Kỹ năng &amp; Công nghệ
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-          Hệ thống kỹ năng được tích lũy qua quá trình đào tạo thuật toán thi đấu, phát triển phần mềm và nghiên cứu phân tích dữ liệu.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        <!-- Skill Group 1: Programming Languages -->
-        <div class="glass-card p-6 rounded-2xl space-y-4 hover:border-brand-500/40 transition-all">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg">
-              <i class="fa-solid fa-code"></i>
-            </div>
+        <!-- ========================================== -->
+        <!-- 5. ACHIEVEMENTS & CERTIFICATES -->
+        <!-- ========================================== -->
+        <section id="achievements" class="space-y-6">
+          <div class="flex items-center justify-between border-b border-art-border pb-3">
             <div>
-              <h3 class="text-lg font-bold text-white">Ngôn ngữ Lập trình</h3>
-              <p class="text-xs text-slate-400">Programming Languages</p>
+              <h2 class="text-xl sm:text-2xl font-bold text-art-textWhite flex items-center gap-2.5">
+                <i class="fa-solid fa-trophy text-art-accent"></i>
+                <span>Achievements & Honors</span>
+              </h2>
+              <p class="text-xs text-art-textMuted mt-1">Các giải thưởng và cột mốc nổi bật trong lập trình và học thuật</p>
             </div>
           </div>
 
-          <div class="flex flex-wrap gap-2.5 pt-2">
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2 hover:border-brand-500 transition-colors">
-              <i class="fa-solid fa-c text-brand-400"></i> C++ / C
-            </span>
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2 hover:border-brand-500 transition-colors">
-              <i class="fa-brands fa-python text-yellow-400"></i> Python
-            </span>
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2 hover:border-brand-500 transition-colors">
-              <i class="fa-solid fa-database text-cyan-400"></i> SQL
-            </span>
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2 hover:border-brand-500 transition-colors">
-              <i class="fa-brands fa-html5 text-orange-400"></i> HTML5
-            </span>
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2 hover:border-brand-500 transition-colors">
-              <i class="fa-solid fa-file-code text-indigo-300"></i> Pascal
-            </span>
-          </div>
-        </div>
-
-        <!-- Skill Group 2: Algorithms & Data Structures -->
-        <div class="glass-card p-6 rounded-2xl space-y-4 hover:border-cyan-500/40 transition-all">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-lg">
-              <i class="fa-solid fa-diagram-project"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-white">Cấu trúc Dữ liệu &amp; Giải thuật</h3>
-              <p class="text-xs text-slate-400">Algorithms &amp; Data Structures</p>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-2.5 pt-2">
-            <span class="px-3 py-1.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs font-mono">Dynamic Programming</span>
-            <span class="px-3 py-1.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs font-mono">Graph Theory</span>
-            <span class="px-3 py-1.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs font-mono">Segment Tree</span>
-            <span class="px-3 py-1.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs font-mono">Fenwick Tree (BIT)</span>
-            <span class="px-3 py-1.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs font-mono">Disjoint Set Union (DSU)</span>
-            <span class="px-3 py-1.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs font-mono">Number Theory</span>
-            <span class="px-3 py-1.5 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-xs font-mono">String Hashing</span>
-          </div>
-        </div>
-
-        <!-- Skill Group 3: Tools & Environments -->
-        <div class="glass-card p-6 rounded-2xl space-y-4 hover:border-purple-500/40 transition-all">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg">
-              <i class="fa-solid fa-toolbox"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-white">Công cụ &amp; Môi trường</h3>
-              <p class="text-xs text-slate-400">Tools &amp; Environments</p>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-2.5 pt-2">
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2">
-              <i class="fa-solid fa-server text-purple-400"></i> Themis Automated Grader
-            </span>
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2">
-              <i class="fa-solid fa-terminal text-blue-400"></i> Visual Studio Code
-            </span>
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2">
-              <i class="fa-solid fa-globe text-emerald-400"></i> Online Judge (VNOI/LQDOJ/LCOJ)
-            </span>
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2">
-              <i class="fa-brands fa-git-alt text-orange-500"></i> Git &amp; GitHub
-            </span>
-          </div>
-        </div>
-
-        <!-- Skill Group 4: Productivity & AI Integration -->
-        <div class="glass-card p-6 rounded-2xl space-y-4 hover:border-emerald-500/40 transition-all">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg">
-              <i class="fa-solid fa-wand-magic-sparkles"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-white">Productivity &amp; AI Integration</h3>
-              <p class="text-xs text-slate-400">Hiệu suất &amp; Ứng dụng Trí tuệ Nhân tạo</p>
-            </div>
-          </div>
-
-          <div class="flex flex-wrap gap-2.5 pt-2">
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2">
-              <i class="fa-solid fa-robot text-emerald-400"></i> AI-Assisted Software Development
-            </span>
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2">
-              <i class="fa-solid fa-file-excel text-green-500"></i> Microsoft Excel
-            </span>
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2">
-              <i class="fa-solid fa-file-word text-blue-500"></i> Microsoft Word
-            </span>
-            <span class="px-3.5 py-2 rounded-xl bg-slate-800/90 border border-slate-700/80 text-white text-xs sm:text-sm font-medium flex items-center gap-2">
-              <i class="fa-solid fa-file-powerpoint text-amber-500"></i> PowerPoint
-            </span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- EDUCATION SECTION -->
-    <section id="education" class="space-y-10">
-      <div class="text-center space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-mono uppercase tracking-widest">
-          Học vấn &amp; Đào tạo
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
-          Quá trình Học tập
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-          Hành trình học tập từ trường THPT chuyên tự nhiên đến chuyên ngành Tài chính - Ngân hàng tại Đại học Ngoại Thương Hà Nội.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- University -->
-        <div class="glass-card p-8 rounded-2xl space-y-5 relative overflow-hidden border-brand-500/30">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-500/10 rounded-full blur-2xl"></div>
-          
-          <div class="flex items-start justify-between">
-            <div class="space-y-1">
-              <span class="px-3 py-1 rounded-full bg-brand-500/20 text-brand-300 text-xs font-mono font-semibold">2026 – Hiện tại</span>
-              <h3 class="text-2xl font-bold text-white mt-2">Đại học Ngoại Thương Hà Nội</h3>
-              <p class="text-slate-300 font-medium text-sm">Foreign Trade University, Ha Noi</p>
-            </div>
-            <div class="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-xl text-brand-400">
-              <i class="fa-solid fa-building-columns"></i>
-            </div>
-          </div>
-
-          <div class="space-y-3 pt-2">
-            <div class="flex items-center gap-2 text-sm text-cyan-300 font-medium">
-              <i class="fa-solid fa-bookmark"></i>
-              <span>Chuyên ngành: Tài chính - Ngân hàng (Major in Finance and Banking)</span>
-            </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-            <div class="space-y-2 bg-slate-900/60 p-4 rounded-xl border border-slate-800">
-              <span class="text-xs font-mono uppercase text-slate-400 block font-semibold">Môn học &amp; Nghiên cứu tiêu biểu:</span>
-              <ul class="text-xs sm:text-sm text-slate-300 space-y-2 list-disc list-inside marker:text-brand-400">
-                <li>Lập trình Phân tích Dữ liệu và Tính toán Khoa học (Programming for Data Analysis &amp; Scientific Computing)</li>
-                <li>Công nghệ Tài chính &amp; Ứng dụng Học máy vào Phân tích Tài chính (Financial Technology &amp; The Application of ML to Financial Analysis)</li>
-              </ul>
+            <!-- Achievement 1: Provincial Award (Hero Gold Card) -->
+            <div class="art-card rounded-2xl p-6 relative overflow-hidden bg-gradient-to-br from-[#242433] to-[#1c1c27] border-art-accent/40 shadow-gold-sm">
+              <div class="absolute top-0 right-0 w-32 h-32 bg-art-accent/10 rounded-full blur-2xl pointer-events-none"></div>
+              
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-art-accent to-yellow-600 flex items-center justify-center text-art-darkBg text-2xl font-black shrink-0 shadow-gold-glow">
+                  <i class="fa-solid fa-award"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-art-accent text-art-darkBg uppercase tracking-wide">
+                      Provincial Award
+                    </span>
+                    <span class="font-mono text-xs text-art-textMuted">2024</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-art-textWhite mt-2">
+                    3rd Place, Provincial Outstanding Student in IT
+                  </h3>
+                  <p class="text-xs text-art-accent font-medium mt-0.5">
+                    Học sinh giỏi môn Tin học tỉnh Nghệ An
+                  </p>
+                  <p class="text-xs text-art-textMuted leading-relaxed mt-3">
+                    Đạt giải Ba kỳ thi chọn Học sinh Giỏi cấp tỉnh môn Tin học năm 2024 với phần thi lập trình giải thuật trên ngôn ngữ C++ và Pascal.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Achievement 2: 100+ Solved Problems -->
+            <div class="art-card rounded-2xl p-6 relative overflow-hidden">
+              <div class="flex items-start gap-4">
+                <div class="w-14 h-14 rounded-2xl bg-art-cardHover border border-art-accent/30 flex items-center justify-center text-art-accent text-2xl font-black shrink-0">
+                  <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded bg-art-cardHover text-art-accent border border-art-border uppercase tracking-wide">
+                      Competitive Programming
+                    </span>
+                    <span class="font-mono text-xs text-art-textMuted">2024</span>
+                  </div>
+                  <h3 class="text-lg font-bold text-art-textWhite mt-2">
+                    Solved 100+ Advanced Algorithmic Problems
+                  </h3>
+                  <p class="text-xs text-art-accent font-medium mt-0.5">
+                    VNOI, LQDOJ & LCOJ Online Judges
+                  </p>
+                  <p class="text-xs text-art-textMuted leading-relaxed mt-3">
+                    Chinh phục và tối ưu hơn 100 bài toán thuật toán từ mức độ cơ bản đến nâng cao: Dynamic Programming, Segment Trees, Graph Traversals, Hashing và Disjoint Set Union.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 6. SKILLS MATRIX & TECH ECOSYSTEM -->
+        <!-- ========================================== -->
+        <section id="skills" class="space-y-6">
+          <div class="flex items-center justify-between border-b border-art-border pb-3">
+            <div>
+              <h2 class="text-xl sm:text-2xl font-bold text-art-textWhite flex items-center gap-2.5">
+                <i class="fa-solid fa-microchip text-art-accent"></i>
+                <span>Technical Skills Matrix</span>
+              </h2>
+              <p class="text-xs text-art-textMuted mt-1">Phân loại đầy đủ hệ thống kỹ năng theo hồ sơ năng lực</p>
             </div>
           </div>
-        </div>
 
-        <!-- High School -->
-        <div class="glass-card p-8 rounded-2xl space-y-5 relative overflow-hidden">
-          <div class="flex items-start justify-between">
-            <div class="space-y-1">
-              <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono font-semibold">2022 – 2025</span>
-              <h3 class="text-2xl font-bold text-white mt-2">THPT Diễn Châu 4</h3>
-              <p class="text-slate-300 font-medium text-sm">Dien Chau 4 High School, Diễn Châu, Nghệ An</p>
-            </div>
-            <div class="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-xl text-cyan-400">
-              <i class="fa-solid fa-school"></i>
-            </div>
-          </div>
-
-          <div class="space-y-3 pt-2">
-            <div class="flex items-center gap-2 text-sm text-emerald-400 font-medium">
-              <i class="fa-solid fa-atom"></i>
-              <span>Lớp chuyên Khoa học Tự nhiên (Natural Sciences Specialized Class)</span>
-            </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             
-            <div class="space-y-2 bg-slate-900/60 p-4 rounded-xl border border-slate-800">
-              <span class="text-xs font-mono uppercase text-slate-400 block font-semibold">Điểm nhấn:</span>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Tập trung rèn luyện tư duy Toán học, Tin học thuật toán và đại diện tham gia các kỳ thi Học sinh giỏi cấp Tỉnh môn Tin học.
-              </p>
+            <!-- Category 1: Languages -->
+            <div class="art-card rounded-2xl p-5 space-y-4">
+              <div class="flex items-center gap-2 text-art-accent text-sm font-bold border-b border-art-border pb-2">
+                <i class="fa-solid fa-code"></i>
+                <span>Programming</span>
+              </div>
+              <div class="space-y-2 text-xs">
+                <div class="flex justify-between items-center bg-art-darkBg/60 px-3 py-2 rounded-lg">
+                  <span class="text-art-textWhite font-medium">C / C++</span>
+                  <span class="text-art-accent font-mono">Expert</span>
+                </div>
+                <div class="flex justify-between items-center bg-art-darkBg/60 px-3 py-2 rounded-lg">
+                  <span class="text-art-textWhite font-medium">Python</span>
+                  <span class="text-art-accent font-mono">Proficient</span>
+                </div>
+                <div class="flex justify-between items-center bg-art-darkBg/60 px-3 py-2 rounded-lg">
+                  <span class="text-art-textWhite font-medium">Pascal</span>
+                  <span class="text-art-textMuted font-mono">Advanced</span>
+                </div>
+                <div class="flex justify-between items-center bg-art-darkBg/60 px-3 py-2 rounded-lg">
+                  <span class="text-art-textWhite font-medium">SQL & HTML</span>
+                  <span class="text-art-textMuted font-mono">Intermediate</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 2: Algorithms -->
+            <div class="art-card rounded-2xl p-5 space-y-4">
+              <div class="flex items-center gap-2 text-art-accent text-sm font-bold border-b border-art-border pb-2">
+                <i class="fa-solid fa-network-wired"></i>
+                <span>Algorithms & DS</span>
+              </div>
+              <div class="space-y-2 text-xs">
+                <div class="bg-art-darkBg/60 px-3 py-2 rounded-lg text-art-textWhite flex items-center justify-between">
+                  <span>Dynamic Programming</span>
+                  <i class="fa-solid fa-check text-art-accent text-[10px]"></i>
+                </div>
+                <div class="bg-art-darkBg/60 px-3 py-2 rounded-lg text-art-textWhite flex items-center justify-between">
+                  <span>Segment Tree & BIT</span>
+                  <i class="fa-solid fa-check text-art-accent text-[10px]"></i>
+                </div>
+                <div class="bg-art-darkBg/60 px-3 py-2 rounded-lg text-art-textWhite flex items-center justify-between">
+                  <span>Graph Theory & DSU</span>
+                  <i class="fa-solid fa-check text-art-accent text-[10px]"></i>
+                </div>
+                <div class="bg-art-darkBg/60 px-3 py-2 rounded-lg text-art-textWhite flex items-center justify-between">
+                  <span>String Hashing & Number Theory</span>
+                  <i class="fa-solid fa-check text-art-accent text-[10px]"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 3: Tools & Judges -->
+            <div class="art-card rounded-2xl p-5 space-y-4">
+              <div class="flex items-center gap-2 text-art-accent text-sm font-bold border-b border-art-border pb-2">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <span>Tools & Judges</span>
+              </div>
+              <div class="space-y-2 text-xs">
+                <div class="bg-art-darkBg/60 px-3 py-2 rounded-lg text-art-textWhite flex items-center justify-between">
+                  <span>Themis Auto-grader</span>
+                  <span class="text-[10px] text-art-accent font-mono">Master</span>
+                </div>
+                <div class="bg-art-darkBg/60 px-3 py-2 rounded-lg text-art-textWhite flex items-center justify-between">
+                  <span>Visual Studio Code</span>
+                  <span class="text-[10px] text-art-textMuted font-mono">Primary IDE</span>
+                </div>
+                <div class="bg-art-darkBg/60 px-3 py-2 rounded-lg text-art-textWhite flex items-center justify-between">
+                  <span>Online Judges (VNOI)</span>
+                  <span class="text-[10px] text-art-accent font-mono">100+ Solved</span>
+                </div>
+                <div class="bg-art-darkBg/60 px-3 py-2 rounded-lg text-art-textWhite flex items-center justify-between">
+                  <span>Git & GitHub Workflow</span>
+                  <span class="text-[10px] text-art-textMuted font-mono">Active</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Category 4: AI & Productivity -->
+            <div class="art-card rounded-2xl p-5 space-y-4">
+              <div class="flex items-center gap-2 text-art-accent text-sm font-bold border-b border-art-border pb-2">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>Productivity & AI</span>
+              </div>
+              <div class="space-y-2 text-xs">
+                <div class="bg-art-darkBg/60 px-3 py-2 rounded-lg text-art-textWhite flex items-center justify-between">
+                  <span>AI-Assisted Software Dev</span>
+                  <span class="text-art-accent"><i class="fa-solid fa-bolt text-xs"></i></span>
+                </div>
+                <div class="bg-art-darkBg/60 px-3 py-2 rounded-lg text-art-textWhite flex items-center justify-between">
+                  <span>MS Excel (Financial Modeling)</span>
+                  <span class="text-art-accent"><i class="fa-solid fa-check text-xs"></i></span>
+                </div>
+                <div class="bg-art-darkBg/60 px-3 py-2 rounded-lg text-art-textWhite flex items-center justify-between">
+                  <span>MS Word & PowerPoint</span>
+                  <span class="text-art-accent"><i class="fa-solid fa-check text-xs"></i></span>
+                </div>
+                <div class="bg-art-darkBg/60 px-3 py-2 rounded-lg text-art-textWhite flex items-center justify-between">
+                  <span>Scientific & Data Analysis</span>
+                  <span class="text-art-accent"><i class="fa-solid fa-check text-xs"></i></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 7. CONTACT & CONNECT SECTION -->
+        <!-- ========================================== -->
+        <section id="contact" class="space-y-6">
+          <div class="flex items-center justify-between border-b border-art-border pb-3">
+            <div>
+              <h2 class="text-xl sm:text-2xl font-bold text-art-textWhite flex items-center gap-2.5">
+                <i class="fa-solid fa-paper-plane text-art-accent"></i>
+                <span>Get In Touch</span>
+              </h2>
+              <p class="text-xs text-art-textMuted mt-1">Kết nối, trao đổi về FinTech, thuật toán hoặc cơ hội hợp tác</p>
             </div>
           </div>
-        </div>
 
-      </div>
-    </section>
-
-    <!-- ACHIEVEMENTS & HIGHLIGHTS SECTION -->
-    <section id="achievements" class="space-y-10">
-      <div class="text-center space-y-3">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-mono uppercase tracking-widest">
-          Giải thưởng &amp; Dấu ấn
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
-          Thành tích Nổi bật
-        </h2>
-        <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-          Những dấu mốc khẳng định năng lực giải quyết vấn đề và đam mê trong lĩnh vực Công nghệ Thông tin.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        <!-- Achievement 1 -->
-        <div class="glass-card p-6 sm:p-8 rounded-2xl flex items-start gap-5 border-amber-500/30 hover:border-amber-500/60 transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-500/30 text-amber-400 flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-award"></i>
-          </div>
-          <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-amber-400 font-semibold uppercase tracking-wider">Kỳ thi HSG Cấp Tỉnh</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">2024</span>
-            </div>
-            <h3 class="text-xl font-bold text-white">Giải Ba Học sinh Giỏi Tỉnh môn Tin học</h3>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Đoạt giải Ba (3rd place, Provincial Outstanding Student in IT) tỉnh Nghệ An năm 2024 trong kỳ thi chọn Học sinh giỏi cấp Tỉnh.
-            </p>
-          </div>
-        </div>
-
-        <!-- Achievement 2 -->
-        <div class="glass-card p-6 sm:p-8 rounded-2xl flex items-start gap-5 border-cyan-500/30 hover:border-cyan-500/60 transition-all group">
-          <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-trophy"></i>
-          </div>
-          <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-cyan-400 font-semibold uppercase tracking-wider">Online Judges</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300">2024</span>
-            </div>
-            <h3 class="text-xl font-bold text-white">Giải quyết 100+ Bài toán Thuật toán Nâng cao</h3>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Hoàn thành và tối ưu 100+ bài toán giải thuật phức tạp trên các hệ thống VNOI, LQDOJ, LCOJ với kết quả AC (Accepted) tuyệt đối.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CODE & DATA DEMO PREVIEW (Interactive Section) -->
-    <section class="space-y-6">
-      <div class="glass-card rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
-        <!-- Window Bar -->
-        <div class="bg-slate-900/90 px-5 py-3 border-b border-slate-800 flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-            <span class="ml-2 text-xs font-mono text-slate-400">resume_data.json &bull; Preview</span>
-          </div>
-          <button onclick="openJsonModal()" class="text-xs font-mono text-brand-400 hover:text-brand-300 flex items-center gap-1.5 transition-colors">
-            <i class="fa-solid fa-expand"></i> Phóng to JSON
-          </button>
-        </div>
-
-        <!-- Code Content -->
-        <div class="p-6 bg-slate-950 font-mono text-xs sm:text-sm overflow-x-auto text-slate-300 max-h-72">
-          <pre><code class="text-brand-300">{
-  "personal_information": {
-    "name": "NGUYEN TIEN MANH",
-    "location": "Ha Noi, Vietnam",
-    "phone": "0964564955",
-    "email": "k64.2513310134@ftu.edu.vn",
-    "github": "https://github.com/tienmanh301"
-  },
-  "education": [
-    {
-      "institution": "Foreign Trade University, Ha Noi",
-      "degree": "Major in Finance and Banking",
-      "period": "2026 – Present"
-    }
-  ],
-  "work_experience": [
-    {
-      "organization": "High School Gifted IT Team",
-      "role": "Competitive Programming Technical Assistant And Problem Setter",
-      "period": "2024"
-    }
-  ],
-  "skills": {
-    "programming_languages": ["Pascal", "C", "C++", "Python", "HTML", "SQL"],
-    "algorithms_and_data_structures": ["Dynamic Programming", "Graph Theory", "Segment Tree", "Fenwick Tree", "DSU"]
-  }
-}</code></pre>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="space-y-10">
-      <div class="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden border-brand-500/30">
-        <!-- Ambient light -->
-        <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <div class="space-y-4 text-center lg:text-left">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-400 text-xs font-mono uppercase tracking-widest">
-              Kết nối &amp; Hợp tác
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
-              Hãy cùng tạo nên <span class="gradient-text">những giá trị đột phá</span>
-            </h2>
-            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Tôi luôn sẵn sàng thảo luận về các dự án Công nghệ, Cơ hội thực tập, Hợp tác nghiên cứu FinTech hoặc chia sẻ về Giải thuật lập trình.
-            </p>
-          </div>
-
-          <div class="space-y-4">
-            <!-- Email Item -->
-            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-brand-500/50 flex items-center justify-between gap-4 transition-all">
-              <div class="flex items-center gap-3.5 min-w-0">
-                <div class="w-11 h-11 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg flex-shrink-0">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Contact Info Cards (Left 1 Col) -->
+            <div class="space-y-4">
+              <!-- Card: Email -->
+              <div class="art-card rounded-2xl p-5 flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-xl bg-art-accent/10 border border-art-accent/30 flex items-center justify-center text-art-accent text-lg shrink-0 group-hover:scale-110 transition-transform">
                   <i class="fa-solid fa-envelope"></i>
                 </div>
-                <div class="min-w-0">
-                  <span class="text-xs text-slate-400 block">Email chính thức</span>
-                  <a href="mailto:k64.2513310134@ftu.edu.vn" class="text-sm font-semibold text-white hover:text-brand-300 truncate block">
+                <div class="min-w-0 flex-1">
+                  <div class="text-[11px] text-art-textMuted uppercase tracking-wider font-semibold">Email FTU</div>
+                  <a href="mailto:k64.2513310134@ftu.edu.vn" class="text-xs font-mono text-art-textWhite hover:text-art-accent transition-colors truncate block" title="k64.2513310134@ftu.edu.vn">
                     k64.2513310134@ftu.edu.vn
                   </a>
                 </div>
+                <button onclick="copyToClipboard('k64.2513310134@ftu.edu.vn', 'Email')" class="text-art-textMuted hover:text-art-accent p-2" title="Copy Email">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
               </div>
-              <button onclick="copyToClipboard('k64.2513310134@ftu.edu.vn', 'Email')" class="p-2.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-brand-600 transition-all flex-shrink-0" title="Sao chép Email">
-                <i class="fa-regular fa-copy"></i>
-              </button>
-            </div>
 
-            <!-- Phone Item -->
-            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 flex items-center justify-between gap-4 transition-all">
-              <div class="flex items-center gap-3.5 min-w-0">
-                <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg flex-shrink-0">
+              <!-- Card: Phone -->
+              <div class="art-card rounded-2xl p-5 flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-xl bg-art-accent/10 border border-art-accent/30 flex items-center justify-center text-art-accent text-lg shrink-0 group-hover:scale-110 transition-transform">
                   <i class="fa-solid fa-phone"></i>
                 </div>
-                <div class="min-w-0">
-                  <span class="text-xs text-slate-400 block">Số điện thoại / Zalo</span>
-                  <a href="tel:0964564955" class="text-sm font-semibold text-white hover:text-emerald-300 truncate block">
+                <div class="min-w-0 flex-1">
+                  <div class="text-[11px] text-art-textMuted uppercase tracking-wider font-semibold">Phone Number</div>
+                  <a href="tel:0964564955" class="text-xs font-mono text-art-textWhite hover:text-art-accent transition-colors block">
                     0964564955
                   </a>
                 </div>
+                <button onclick="copyToClipboard('0964564955', 'Phone')" class="text-art-textMuted hover:text-art-accent p-2" title="Copy Phone">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
               </div>
-              <button onclick="copyToClipboard('0964564955', 'Số điện thoại')" class="p-2.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-emerald-600 transition-all flex-shrink-0" title="Sao chép Số điện thoại">
-                <i class="fa-regular fa-copy"></i>
-              </button>
-            </div>
 
-            <!-- GitHub Item -->
-            <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-purple-500/50 flex items-center justify-between gap-4 transition-all">
-              <div class="flex items-center gap-3.5 min-w-0">
-                <div class="w-11 h-11 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg flex-shrink-0">
+              <!-- Card: GitHub -->
+              <div class="art-card rounded-2xl p-5 flex items-center gap-4 group">
+                <div class="w-12 h-12 rounded-xl bg-art-accent/10 border border-art-accent/30 flex items-center justify-center text-art-accent text-lg shrink-0 group-hover:scale-110 transition-transform">
                   <i class="fa-brands fa-github"></i>
                 </div>
-                <div class="min-w-0">
-                  <span class="text-xs text-slate-400 block">GitHub Repository</span>
-                  <a href="https://github.com/tienmanh301" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-white hover:text-purple-300 truncate block">
+                <div class="min-w-0 flex-1">
+                  <div class="text-[11px] text-art-textMuted uppercase tracking-wider font-semibold">GitHub Profile</div>
+                  <a href="https://github.com/tienmanh301" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-art-textWhite hover:text-art-accent transition-colors block">
                     github.com/tienmanh301
                   </a>
                 </div>
+                <a href="https://github.com/tienmanh301" target="_blank" rel="noopener noreferrer" class="text-art-textMuted hover:text-art-accent p-2">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
               </div>
-              <a href="https://github.com/tienmanh301" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-purple-600 transition-all flex-shrink-0" title="Mở GitHub">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
+            </div>
+
+            <!-- Quick Interactive Message Form (Right 2 Cols) -->
+            <div class="lg:col-span-2 art-card rounded-2xl p-6 sm:p-8">
+              <h3 class="text-base font-bold text-art-textWhite mb-1">Gửi lời nhắn trực tiếp</h3>
+              <p class="text-xs text-art-textMuted mb-6">Tôi sẽ phản hồi trong thời gian sớm nhất qua Email hoặc SĐT.</p>
+
+              <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-medium text-art-textLight mb-1.5">Họ và tên *</label>
+                    <input type="text" required placeholder="Nguyen Van A" class="w-full px-4 py-2.5 rounded-xl bg-art-darkBg border border-art-border text-art-textWhite text-xs focus:outline-none focus:border-art-accent transition-colors">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-art-textLight mb-1.5">Địa chỉ Email *</label>
+                    <input type="email" required placeholder="your.email@example.com" class="w-full px-4 py-2.5 rounded-xl bg-art-darkBg border border-art-border text-art-textWhite text-xs focus:outline-none focus:border-art-accent transition-colors">
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-medium text-art-textLight mb-1.5">Chủ đề liên hệ</label>
+                  <input type="text" placeholder="Hợp tác FinTech / Thuật toán / Tuyển dụng" class="w-full px-4 py-2.5 rounded-xl bg-art-darkBg border border-art-border text-art-textWhite text-xs focus:outline-none focus:border-art-accent transition-colors">
+                </div>
+
+                <div>
+                  <label class="block text-xs font-medium text-art-textLight mb-1.5">Nội dung tin nhắn *</label>
+                  <textarea rows="4" required placeholder="Nhập nội dung cần trao đổi tại đây..." class="w-full px-4 py-2.5 rounded-xl bg-art-darkBg border border-art-border text-art-textWhite text-xs focus:outline-none focus:border-art-accent transition-colors resize-none"></textarea>
+                </div>
+
+                <div class="flex items-center justify-between pt-2">
+                  <div id="formStatus" class="text-xs font-medium text-emerald-400 hidden">
+                    <i class="fa-solid fa-circle-check mr-1"></i> Cảm ơn bạn! Tin nhắn đã được ghi nhận.
+                  </div>
+                  <button type="submit" class="ml-auto inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-art-accent hover:bg-art-accentHover text-art-darkBg font-bold text-xs uppercase tracking-wider shadow-gold-sm transition-all duration-200">
+                    <span>GỬI TIN NHẮN</span>
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                  </button>
+                </div>
+              </form>
             </div>
 
           </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="border-t border-slate-800/80 bg-darkBg py-8 relative z-10 text-center text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-brand-500"></span>
-        <span class="text-slate-400 font-medium">Nguyen Tien Manh &bull; Portfolio 2026</span>
-      </div>
-      <p class="text-slate-500">Built with HTML5 &bull; Tailwind CSS &bull; Optimized for Mobile &amp; Desktop</p>
-      <a href="#hero" class="text-slate-400 hover:text-white flex items-center gap-1">
-        Lên đầu trang <i class="fa-solid fa-arrow-up"></i>
-      </a>
-    </div>
-  </footer>
-
-  <!-- FLOATING MODERN MUSIC PLAYER WIDGET -->
-  <div id="music-player-container" class="fixed bottom-5 left-5 z-50 transition-all duration-300 max-w-xs sm:max-w-sm w-full">
-    
-    <!-- Collapsed Floating Mini Pill -->
-    <div id="music-pill" class="hidden glass-card bg-slate-900/90 border border-brand-500/40 p-2 rounded-full shadow-2xl flex items-center gap-3 cursor-pointer hover:border-cyan-400 transition-all" onclick="togglePlayerExpand()">
-      <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-500 flex items-center justify-center text-white text-xs shadow-lg flex-shrink-0" id="pill-disc">
-        <i class="fa-solid fa-music"></i>
-      </div>
-      <div class="flex-1 min-w-0 pr-2">
-        <p id="pill-title" class="text-xs font-bold text-white truncate">Lofi Coding Chill</p>
-        <p class="text-[10px] text-slate-400 font-mono">Bấm để mở player</p>
-      </div>
-      <button onclick="event.stopPropagation(); toggleMusicPlay()" class="w-8 h-8 rounded-full bg-brand-500 hover:bg-brand-400 text-white flex items-center justify-center text-xs">
-        <i id="pill-play-icon" class="fa-solid fa-play"></i>
-      </button>
-    </div>
-
-    <!-- Expanded Music Card -->
-    <div id="music-card" class="glass-card bg-slate-900/95 border border-slate-700/80 rounded-2xl p-4 shadow-2xl backdrop-blur-xl relative overflow-hidden transition-all duration-300">
-      
-      <!-- Ambient Glow Behind Player -->
-      <div class="absolute -top-10 -right-10 w-28 h-28 bg-cyan-500/20 rounded-full blur-2xl pointer-events-none"></div>
-
-      <!-- Player Header -->
-      <div class="flex items-center justify-between mb-3">
-        <div class="flex items-center gap-2">
-          <div id="player-equalizer" class="flex items-end gap-1 h-4">
-            <div class="equalizer-bar bar-1"></div>
-            <div class="equalizer-bar bar-2"></div>
-            <div class="equalizer-bar bar-3"></div>
-            <div class="equalizer-bar bar-4"></div>
-          </div>
-          <span class="text-[11px] font-mono font-semibold tracking-wider text-cyan-300 uppercase">Lofi Focus Audio</span>
-        </div>
-
-        <div class="flex items-center gap-1.5">
-          <button onclick="togglePlaylistModal()" class="text-slate-400 hover:text-white p-1 rounded hover:bg-slate-800 transition-colors" title="Danh sách bài hát">
-            <i class="fa-solid fa-list-ul text-xs"></i>
-          </button>
-          <button onclick="togglePlayerExpand()" class="text-slate-400 hover:text-white p-1 rounded hover:bg-slate-800 transition-colors" title="Thu nhỏ">
-            <i class="fa-solid fa-chevron-down text-xs"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Track Info & Visual Disc -->
-      <div class="flex items-center gap-3.5 mb-3">
-        <!-- Spinning Vinyl Disc / Album Cover -->
-        <div class="relative w-12 h-12 rounded-full bg-slate-800 border-2 border-slate-700 overflow-hidden flex-shrink-0 flex items-center justify-center shadow-md">
-          <div id="player-disc" class="w-full h-full bg-gradient-to-tr from-brand-600 via-purple-600 to-cyan-500 rounded-full flex items-center justify-center">
-            <div class="w-4 h-4 rounded-full bg-slate-950 border border-white/20"></div>
-          </div>
-        </div>
-
-        <div class="min-w-0 flex-1">
-          <h4 id="player-title" class="text-xs font-bold text-white truncate">Lofi Coding Beats</h4>
-          <p id="player-artist" class="text-[11px] text-slate-400 truncate">Deep Focus &bull; Chill Study</p>
-        </div>
-      </div>
-
-      <!-- Progress Bar -->
-      <div class="space-y-1 mb-3">
-        <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden cursor-pointer relative" onclick="seekAudio(event)" id="progress-bar-container">
-          <div id="progress-bar" class="bg-gradient-to-r from-brand-500 to-cyan-400 h-full w-0 rounded-full transition-all"></div>
-        </div>
-        <div class="flex justify-between text-[10px] font-mono text-slate-500">
-          <span id="current-time">0:00</span>
-          <span id="duration-time">--:--</span>
-        </div>
-      </div>
-
-      <!-- Controls & Volume -->
-      <div class="flex items-center justify-between gap-2">
-        
-        <!-- Playback Buttons -->
-        <div class="flex items-center gap-2">
-          <button onclick="prevTrack()" class="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg text-xs transition-colors" title="Bài trước">
-            <i class="fa-solid fa-backward-step"></i>
-          </button>
-
-          <button onclick="toggleMusicPlay()" class="w-9 h-9 rounded-xl bg-gradient-to-r from-brand-600 to-cyan-600 hover:from-brand-500 hover:to-cyan-500 text-white flex items-center justify-center shadow-lg shadow-brand-500/30 hover:scale-105 transition-all" title="Phát / Dừng">
-            <i id="player-play-icon" class="fa-solid fa-play text-sm"></i>
-          </button>
-
-          <button onclick="nextTrack()" class="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg text-xs transition-colors" title="Bài tiếp">
-            <i class="fa-solid fa-forward-step"></i>
-          </button>
-        </div>
-
-        <!-- Volume Control -->
-        <div class="flex items-center gap-1.5 bg-slate-950/60 px-2.5 py-1 rounded-lg border border-slate-800">
-          <button onclick="toggleMute()" class="text-slate-400 hover:text-white text-xs">
-            <i id="volume-icon" class="fa-solid fa-volume-high"></i>
-          </button>
-          <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.7" oninput="changeVolume(this.value)" class="w-14 sm:w-16 h-1 bg-slate-800 rounded-lg appearance-none cursor-pointer">
-        </div>
+        </section>
 
       </div>
 
-      <!-- Hidden Playlist Drawer inside card -->
-      <div id="playlist-drawer" class="hidden mt-3 pt-3 border-t border-slate-800 space-y-1.5 max-h-36 overflow-y-auto">
-        <p class="text-[10px] font-mono uppercase text-slate-400 font-semibold mb-1">Chọn bài hát:</p>
-        <div id="playlist-items" class="space-y-1"></div>
-      </div>
+      <!-- FOOTER -->
+      <footer class="mt-auto bg-art-sidebar border-t border-art-border px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-art-textMuted">
+        <div>
+          © 2026 <strong class="text-art-textWhite font-medium">Nguyen Tien Manh</strong>. Built with passion for Finance & Algorithms.
+        </div>
+        <div class="flex items-center gap-4 text-xs font-mono">
+          <a href="#hero" class="hover:text-art-accent transition-colors flex items-center gap-1">
+            <span>Back to top</span>
+            <i class="fa-solid fa-chevron-up text-[10px]"></i>
+          </a>
+        </div>
+      </footer>
 
-    </div>
+    </main>
+
   </div>
 
-  <!-- HIDDEN AUDIO ELEMENT -->
-  <audio id="audio-player" preload="metadata"></audio>
-
-  <!-- JSON RESUME MODAL -->
-  <div id="json-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="glass-card bg-slate-900 border border-slate-700 w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] animate-float">
-      
-      <!-- Modal Header -->
-      <div class="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-950">
-        <div class="flex items-center gap-2.5">
-          <i class="fa-solid fa-code text-brand-400"></i>
-          <h3 class="font-bold text-white text-base">Trích Xuất Dữ Liệu JSON Chuẩn (Resume Schema)</h3>
-        </div>
-        <div class="flex items-center gap-2">
-          <button onclick="copyRawJson()" class="px-3 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-white text-xs font-mono flex items-center gap-1.5 transition-all">
-            <i class="fa-regular fa-copy"></i> Sao chép JSON
-          </button>
-          <button onclick="closeJsonModal()" class="p-1.5 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition-all">
-            <i class="fa-solid fa-xmark text-lg"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Modal Body -->
-      <div class="p-6 overflow-y-auto font-mono text-xs sm:text-sm text-slate-200 bg-slate-950/95 leading-relaxed">
-        <pre id="json-code-container" class="text-brand-300"></pre>
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="px-6 py-3 border-t border-slate-800 bg-slate-950 flex items-center justify-between text-xs text-slate-400 font-mono">
-        <span>Standard JSON Schema Compliant</span>
-        <button onclick="closeJsonModal()" class="text-slate-400 hover:text-white">Đóng</button>
-      </div>
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+    <div class="bg-art-sidebar border border-art-accent text-art-textWhite text-xs font-medium px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3">
+      <i class="fa-solid fa-circle-check text-art-accent text-base"></i>
+      <span id="toastMessage">Đã sao chép vào bộ nhớ tạm!</span>
     </div>
   </div>
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    // Complete Standard JSON Data from Resume
-    const resumeData = {
-      "personal_information": {
-        "full_name": "NGUYEN TIEN MANH",
-        "location": "Ha Noi, Vietnam",
-        "phone": "0964564955",
-        "email": "k64.2513310134@ftu.edu.vn",
-        "github": "https://github.com/tienmanh301"
-      },
-      "education": [
-        {
-          "institution": "Foreign Trade University, Ha Noi",
-          "period": "2026 – Present",
-          "major": "Major in Finance and Banking",
-          "related_coursework": [
-            "Programming for Data Analysis and Scientific Computing",
-            "Financial Technology and The Application of Machine Learning to Financial Analysis"
-          ]
-        },
-        {
-          "institution": "Dien Chau 4 High School, Dien Chau, Nghe An",
-          "period": "2022 – 2025",
-          "specialization": "Natural Sciences Specialized Class"
-        }
-      ],
-      "work_experience": [
-        {
-          "organization": "High School Gifted IT Team",
-          "role": "Competitive Programming Technical Assistant And Problem Setter",
-          "period": "2024",
-          "responsibilities": [
-            "Configured and operated the Themis automated evaluation system to execute and grade complex Data Structures And Algorithms problem sets for the provincial gifted team.",
-            "Engineered, validated, and stress-tested comprehensive testcases to cover edge cases and enforce strict Time and Space Complexity constraints (O(N log N), O(N)).",
-            "Analyzed and debugged student code submissions, providing detailed technical feedback on optimizing dynamic programming state transitions, graph traversals, and advanced data structures (Segment Tree, Fenwick Tree)."
-          ]
-        },
-        {
-          "organization": "VNOI And Online Judge Platforms",
-          "role": "Algorithm Practice And Problem Solving",
-          "period": "2024",
-          "responsibilities": [
-            "Solved and optimized over 100 algorithmic problems across VNOI, LQDOJ, and LCOJ platforms, specializing in Dynamic Programming, Graph Theory, Number Theory, and String Hashing.",
-            "Analyzed contest editorials and refactored suboptimal solution code to eliminate Time Limit Exceeded (TLE) and Memory Limit Exceeded (MLE) bottlenecks."
-          ]
-        }
-      ],
-      "skills": {
-        "programming_languages": [
-          "Pascal",
-          "C",
-          "C++",
-          "Python",
-          "HTML",
-          "SQL"
-        ],
-        "algorithms_and_data_structures": [
-          "Dynamic Programming",
-          "Graph Theory",
-          "Number Theory",
-          "String Hashing",
-          "Segment Tree",
-          "Fenwick Tree (BIT)",
-          "Disjoint Set Union (DSU)"
-        ],
-        "tools_and_environments": [
-          "Themis",
-          "Visual Studio Code",
-          "Online Judge"
-        ],
-        "productivity_and_ai_integration": [
-          "AI-Assisted Software Development",
-          "Microsoft Excel",
-          "Microsoft Word",
-          "Microsoft PowerPoint"
-        ]
-      },
-      "achievements": [
-        {
-          "title": "3rd place, Provincial Outstanding Student in IT",
-          "organization_or_location": "Nghe An Province",
-          "year": "2024"
-        },
-        {
-          "title": "Solved 100+ Advanced Algorithmic Problems",
-          "platforms": "VNOI, LQDOJ, and LCOJ Online Judges",
-          "year": "2024"
-        }
-      ]
-    };
+    // 1. DYNAMIC TYPEWRITER EFFECT
+    const typingPhrases = [
+      "I & algorithms build financial models",
+      "Specializing in Dynamic Programming & Graph Theory",
+      "Segment Trees, Fenwick Trees & O(N log N) Stress Testing",
+      "Connecting Quantitative Finance with Machine Learning"
+    ];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typewriterElement = document.getElementById('typewriterText');
 
-    // Render JSON inside modal
-    document.getElementById('json-code-container').textContent = JSON.stringify(resumeData, null, 2);
+    function typeEffect() {
+      const currentPhrase = typingPhrases[phraseIndex];
+      
+      if (isDeleting) {
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+      }
 
-    // Modal Handlers
-    function openJsonModal() {
-      document.getElementById('json-modal').classList.remove('hidden');
+      let typingSpeed = isDeleting ? 30 : 65;
+
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        typingSpeed = 2200; // Pause at full text
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % typingPhrases.length;
+        typingSpeed = 500;
+      }
+
+      setTimeout(typeEffect, typingSpeed);
+    }
+
+    // 2. COUNTER ANIMATION
+    function animateCounters() {
+      const counters = document.querySelectorAll('.counter');
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let count = 0;
+        const speed = target / 35;
+        
+        const updateCount = () => {
+          count += speed;
+          if (count < target) {
+            counter.innerText = Math.ceil(count);
+            setTimeout(updateCount, 30);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
+      });
+    }
+
+    // 3. COPY TO CLIPBOARD HELPER
+    function copyToClipboard(text, label) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(`Đã sao chép ${label}: ${text}`);
+      }).catch(err => {
+        showToast(`Đã chọn: ${text}`);
+      });
+    }
+
+    // 4. TOAST NOTIFICATION
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.innerText = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+
+    // 5. CONTACT FORM HANDLER
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.classList.remove('hidden');
+      showToast('Cảm ơn bạn! Tin nhắn đã được gửi thành công.');
+      e.target.reset();
+      setTimeout(() => {
+        status.classList.add('hidden');
+      }, 6000);
+    }
+
+    // 6. MOBILE SIDEBAR TOGGLE
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+    const sidebar = document.getElementById('sidebar');
+    const mobileBackdrop = document.getElementById('mobileBackdrop');
+
+    function openSidebar() {
+      sidebar.classList.remove('-translate-x-full');
+      mobileBackdrop.classList.remove('hidden');
       document.body.classList.add('overflow-hidden');
     }
 
-    function closeJsonModal() {
-      document.getElementById('json-modal').classList.add('hidden');
+    function closeSidebar() {
+      sidebar.classList.add('-translate-x-full');
+      mobileBackdrop.classList.add('hidden');
       document.body.classList.remove('overflow-hidden');
     }
 
-    // Close on outside click
-    document.getElementById('json-modal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeJsonModal();
-      }
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openSidebar);
+    if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', closeSidebar);
+    if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeSidebar);
+
+    // Close mobile menu on clicking any sidebar anchor link
+    document.querySelectorAll('#sidebar a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 1024) closeSidebar();
+      });
     });
 
-    // Copy Raw JSON
-    function copyRawJson() {
-      navigator.clipboard.writeText(JSON.stringify(resumeData, null, 2)).then(() => {
-        showToast("Đã sao chép toàn bộ JSON vào bộ nhớ tạm!");
-      });
-    }
-
-    // Mobile Menu Toggle
-    function toggleMobileMenu() {
-      const menu = document.getElementById('mobile-menu');
-      const icon = document.getElementById('menu-icon');
-      if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-xmark');
-      } else {
-        menu.classList.add('hidden');
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
-      }
-    }
-
-    // Generic Copy to Clipboard with Toast Notification
-    function copyToClipboard(text, label) {
-      navigator.clipboard.writeText(text).then(() => {
-        showToast(`Đã sao chép ${label} vào bộ nhớ tạm!`);
-      }).catch(() => {
-        showToast(`Sao chép thất bại, vui lòng thử lại!`);
-      });
-    }
-
-    // Show Toast Function
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      const toastMsg = document.getElementById('toast-message');
-      toastMsg.textContent = message;
-      toast.classList.remove('translate-y-20', 'opacity-0');
-      toast.classList.add('translate-y-0', 'opacity-100');
-
-      setTimeout(() => {
-        toast.classList.remove('translate-y-0', 'opacity-100');
-        toast.classList.add('translate-y-20', 'opacity-0');
-      }, 2600);
-    }
-
-    // ==========================================
-    // MUSIC PLAYER SYSTEM (LOFI / CHILL CODING)
-    // ==========================================
-    const playlist = [
-      {
-        title: "Chill Coding Lofi Beats",
-        artist: "Quiet Moments &bull; Study Flow",
-        src: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=lofi-study-112191.mp3"
-      },
-      {
-        title: "Night City & Coffee",
-        artist: "Ambient Chillhop &bull; Relax",
-        src: "https://cdn.pixabay.com/download/audio/2022/10/14/audio_9939f792cb.mp3?filename=lofi-chill-medium-version-124483.mp3"
-      },
-      {
-        title: "Deep Algorithm Focus",
-        artist: "Smooth Synthesizer &bull; Flow",
-        src: "https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=spirit-blossom-15285.mp3"
-      },
-      {
-        title: "Midnight FinTech Vibes",
-        artist: "Gentle Piano & Acoustic Chill",
-        src: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=warm-memories-10777.mp3"
-      }
-    ];
-
-    let currentTrackIndex = 0;
-    let isPlaying = false;
-    let isMuted = false;
-    let previousVolume = 0.7;
-
-    const audio = document.getElementById('audio-player');
-    const playerPlayIcon = document.getElementById('player-play-icon');
-    const pillPlayIcon = document.getElementById('pill-play-icon');
-    const playerTitle = document.getElementById('player-title');
-    const playerArtist = document.getElementById('player-artist');
-    const pillTitle = document.getElementById('pill-title');
-    const playerDisc = document.getElementById('player-disc');
-    const pillDisc = document.getElementById('pill-disc');
-    const progressBar = document.getElementById('progress-bar');
-    const currentTimeEl = document.getElementById('current-time');
-    const durationTimeEl = document.getElementById('duration-time');
-    const volumeSlider = document.getElementById('volume-slider');
-    const volumeIcon = document.getElementById('volume-icon');
-    const playerEqualizer = document.getElementById('player-equalizer');
-    const navEqualizer = document.getElementById('nav-equalizer');
-    const navMusicText = document.getElementById('nav-music-text');
-    const heroMusicBtnText = document.getElementById('hero-music-btn-text');
-    const mobileMusicBtnText = document.getElementById('mobile-music-btn-text');
-
-    // Initialize Audio
-    function loadTrack(index) {
-      currentTrackIndex = index;
-      const track = playlist[index];
-      audio.src = track.src;
-      playerTitle.textContent = track.title;
-      playerArtist.innerHTML = track.artist;
-      pillTitle.textContent = track.title;
-      renderPlaylistItems();
-    }
-
-    function renderPlaylistItems() {
-      const container = document.getElementById('playlist-items');
-      if (!container) return;
-      container.innerHTML = playlist.map((item, idx) => `
-        <div onclick="selectTrack(${idx})" class="p-2 rounded-lg text-xs flex items-center justify-between cursor-pointer transition-all ${idx === currentTrackIndex ? 'bg-brand-500/20 text-brand-300 border border-brand-500/30' : 'text-slate-300 hover:bg-slate-800'}">
-          <div class="truncate mr-2">
-            <span class="font-medium truncate block">${item.title}</span>
-            <span class="text-[10px] text-slate-500 block truncate">${item.artist.replace('&bull;', '-')}</span>
-          </div>
-          ${idx === currentTrackIndex && isPlaying ? '<i class="fa-solid fa-volume-high text-cyan-400 text-xs flex-shrink-0"></i>' : ''}
-        </div>
-      `).join('');
-    }
-
-    function toggleMusicPlay() {
-      if (!audio.src) {
-        loadTrack(0);
-      }
-      if (isPlaying) {
-        audio.pause();
-      } else {
-        audio.play().then(() => {
-          showToast(`Đang phát: ${playlist[currentTrackIndex].title}`);
-        }).catch((err) => {
-          console.log("Autoplay blocked, waiting for interaction", err);
-        });
-      }
-    }
-
-    function selectTrack(index) {
-      loadTrack(index);
-      audio.play().then(() => {
-        showToast(`Đang phát: ${playlist[currentTrackIndex].title}`);
-      });
-    }
-
-    function nextTrack() {
-      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
-      loadTrack(currentTrackIndex);
-      if (isPlaying) audio.play();
-    }
-
-    function prevTrack() {
-      currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
-      loadTrack(currentTrackIndex);
-      if (isPlaying) audio.play();
-    }
-
-    function updatePlayState(playing) {
-      isPlaying = playing;
-      if (playing) {
-        playerPlayIcon.classList.remove('fa-play');
-        playerPlayIcon.classList.add('fa-pause');
-        pillPlayIcon.classList.remove('fa-play');
-        pillPlayIcon.classList.add('fa-pause');
-        
-        playerDisc.classList.add('animate-spin-slow');
-        pillDisc.classList.add('animate-spin-slow');
-        
-        playerEqualizer.classList.add('playing');
-        navEqualizer.classList.add('playing');
-        
-        navMusicText.textContent = "Playing...";
-        if (heroMusicBtnText) heroMusicBtnText.textContent = "Tạm dừng Nhạc";
-        if (mobileMusicBtnText) mobileMusicBtnText.textContent = "Tạm dừng Nhạc";
-      } else {
-        playerPlayIcon.classList.remove('fa-pause');
-        playerPlayIcon.classList.add('fa-play');
-        pillPlayIcon.classList.remove('fa-pause');
-        pillPlayIcon.classList.add('fa-play');
-        
-        playerDisc.classList.remove('animate-spin-slow');
-        pillDisc.classList.remove('animate-spin-slow');
-        
-        playerEqualizer.classList.remove('playing');
-        navEqualizer.classList.remove('playing');
-        
-        navMusicText.textContent = "Lofi Music";
-        if (heroMusicBtnText) heroMusicBtnText.textContent = "Bật Nhạc Lofi";
-        if (mobileMusicBtnText) mobileMusicBtnText.textContent = "Phát nhạc Lofi";
-      }
-      renderPlaylistItems();
-    }
-
-    // Audio Event Listeners
-    audio.addEventListener('play', () => updatePlayState(true));
-    audio.addEventListener('pause', () => updatePlayState(false));
-    audio.addEventListener('ended', () => nextTrack());
-
-    audio.addEventListener('timeupdate', () => {
-      if (audio.duration) {
-        const progressPercent = (audio.currentTime / audio.duration) * 100;
-        progressBar.style.width = `${progressPercent}%`;
-        currentTimeEl.textContent = formatTime(audio.currentTime);
-        durationTimeEl.textContent = formatTime(audio.duration);
-      }
+    // Initialize on DOM load
+    document.addEventListener('DOMContentLoaded', () => {
+      typeEffect();
+      animateCounters();
     });
-
-    function formatTime(seconds) {
-      if (isNaN(seconds)) return "0:00";
-      const mins = Math.floor(seconds / 60);
-      const secs = Math.floor(seconds % 60);
-      return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-    }
-
-    function seekAudio(e) {
-      const container = document.getElementById('progress-bar-container');
-      const rect = container.getBoundingClientRect();
-      const clickX = e.clientX - rect.left;
-      const width = rect.width;
-      if (audio.duration) {
-        audio.currentTime = (clickX / width) * audio.duration;
-      }
-    }
-
-    function changeVolume(val) {
-      audio.volume = val;
-      isMuted = val == 0;
-      updateVolumeIcon(val);
-    }
-
-    function toggleMute() {
-      if (isMuted) {
-        audio.volume = previousVolume || 0.7;
-        volumeSlider.value = audio.volume;
-        isMuted = false;
-      } else {
-        previousVolume = audio.volume;
-        audio.volume = 0;
-        volumeSlider.value = 0;
-        isMuted = true;
-      }
-      updateVolumeIcon(audio.volume);
-    }
-
-    function updateVolumeIcon(vol) {
-      if (vol == 0) {
-        volumeIcon.className = "fa-solid fa-volume-xmark text-rose-400";
-      } else if (vol < 0.5) {
-        volumeIcon.className = "fa-solid fa-volume-low text-slate-400";
-      } else {
-        volumeIcon.className = "fa-solid fa-volume-high text-cyan-400";
-      }
-    }
-
-    function togglePlayerExpand() {
-      const pill = document.getElementById('music-pill');
-      const card = document.getElementById('music-card');
-      if (card.classList.contains('hidden')) {
-        card.classList.remove('hidden');
-        pill.classList.add('hidden');
-      } else {
-        card.classList.add('hidden');
-        pill.classList.remove('hidden');
-      }
-    }
-
-    function togglePlaylistModal() {
-      const drawer = document.getElementById('playlist-drawer');
-      drawer.classList.toggle('hidden');
-    }
-
-    // Initialize track on load
-    loadTrack(0);
-    audio.volume = 0.7;
   </script>
 </body>
 </html>
