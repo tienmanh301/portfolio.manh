@@ -1,0 +1,132 @@
+{
+  "basics": {
+    "name": "Nguyen Tien Manh",
+    "vietnameseName": "Nguyễn Tiến Mạnh",
+    "title": "Competitive Programmer & FinTech / Data Science Student",
+    "avatar": "assets/images/avatar.jpg",
+    "location": {
+      "city": "Ha Noi",
+      "country": "Vietnam",
+      "address": "Ha Noi, Vietnam"
+    },
+    "phone": "0964564955",
+    "email": "k64.2513310134@ftu.edu.vn",
+    "github": "https://github.com/tienmanh301",
+    "summary": "Sinh viên ngành Tài chính - Ngân hàng (K64) tại Đại học Ngoại thương Hà Nội với nền tảng tư duy thuật toán và lập trình thi đấu (Competitive Programming) vững chắc (C++, Python). Đam mê ứng dụng Khoa học Dữ liệu, Trí tuệ Nhân tạo (AI) và Công nghệ Tài chính (FinTech) vào giải quyết các bài toán tối ưu hiệu năng tính toán và phân tích định lượng."
+  },
+  "education": [
+    {
+      "institution": "Trường Đại học Ngoại thương Hà Nội (FTU)",
+      "degree": "Cử nhân (Bachelor's Degree)",
+      "major": "Tài chính - Ngân hàng (Finance and Banking - Khóa K64)",
+      "startDate": "2026",
+      "endDate": "Hiện tại",
+      "status": "Đang theo học",
+      "relatedCoursework": [
+        "Programming for Data Analysis and Scientific Computing",
+        "Financial Technology (FinTech)",
+        "The Application of Machine Learning to Financial Analysis"
+      ]
+    },
+    {
+      "institution": "Trường THPT Diễn Châu 4, Diễn Châu, Nghệ An",
+      "degree": "Bằng Tốt nghiệp THPT",
+      "major": "Lớp Chuyên Tự Nhiên (Natural Sciences Specialized Class)",
+      "startDate": "2022",
+      "endDate": "2025",
+      "description": "Thành viên đội tuyển bồi dưỡng Học sinh giỏi Tin học, chuyên sâu Toán học, Vật lý và Thuật toán."
+    }
+  ],
+  "workExperience": [
+    {
+      "organization": "Đội tuyển Học sinh giỏi Tin học THPT",
+      "role": "Trợ giảng Kỹ thuật & Người ra đề Lập trình thi đấu (Competitive Programming Technical Assistant & Problem Setter)",
+      "period": "2024",
+      "highlights": [
+        "Cấu hình và vận hành hệ thống chấm điểm tự động Themis để tổ chức kiểm tra, đánh giá các bộ bài tập Cấu trúc dữ liệu và Giải thuật chuyên sâu cho đội tuyển học sinh giỏi cấp tỉnh.",
+        "Thiết kế, kiểm thử và stress-test các bộ testcase chuyên sâu nhằm bao quát các trường hợp biên (edge cases) và kiểm soát nghiêm ngặt ràng buộc độ phức tạp Thời gian & Không gian (O(N log N), O(N)).",
+        "Phân tích, gỡ lỗi (debug) bài nộp của học sinh, cung cấp phản hồi kỹ thuật chuyên sâu về tối ưu trạng thái Quy hoạch động, duyệt đồ thị và cấu trúc dữ liệu nâng cao (Segment Tree, Fenwick Tree)."
+      ],
+      "technologies": ["C++", "Themis Automated Evaluation", "Segment Tree", "Fenwick Tree (BIT)", "Graph Theory"]
+    },
+    {
+      "organization": "Nền tảng Luyện tập Trực tuyến (VNOI, LQDOJ, LCOJ)",
+      "role": "Luyện tập Giải thuật & Tối ưu hóa Code (Algorithm Practice & Problem Solving)",
+      "period": "2024",
+      "highlights": [
+        "Giải và tối ưu hóa hơn 100 bài toán giải thuật nâng cao trên các nền tảng VNOI, LQDOJ, LCOJ.",
+        "Chuyên sâu về Quy hoạch động (Dynamic Programming), Lý thuyết Đồ thị (Graph Theory), Lý thuyết Số (Number Theory) và Băm xâu (String Hashing).",
+        "Nghiên cứu contest editorial và tái cấu trúc mã nguồn tối ưu nhằm loại bỏ hoàn toàn các nút thắt Vượt quá thời gian (TLE) và Bộ nhớ (MLE)."
+      ],
+      "technologies": ["C++20", "Python", "VNOI", "LQDOJ", "Dynamic Programming"]
+    }
+  ],
+  "skills": {
+    "programmingLanguages": [
+      { "name": "C++", "level": "Chuyên sâu (Advanced)" },
+      { "name": "Python", "level": "Thành thạo (Proficient)" },
+      { "name": "C", "level": "Thành thạo" },
+      { "name": "Pascal", "level": "Thành thạo" },
+      { "name": "SQL", "level": "Cơ bản / Trung cấp" },
+      { "name": "HTML5 / CSS3", "level": "Cơ bản / Trung cấp" }
+    ],
+    "algorithmsAndDataStructures": [
+      "Dynamic Programming (Quy hoạch động)",
+      "Graph Theory (Lý thuyết đồ thị - DFS, BFS, Dijkstra, MST)",
+      "Segment Tree (Cây phân đoạn)",
+      "Fenwick Tree / BIT (Cây chỉ số nhị phân)",
+      "Disjoint Set Union (DSU - Cấu trúc tập hợp rời nhau)",
+      "String Hashing (Băm xâu ký tự)",
+      "Number Theory (Lý thuyết số & Toán rời rạc)"
+    ],
+    "toolsAndEnvironments": [
+      "Themis Automated Evaluation System",
+      "Visual Studio Code",
+      "Online Judge Platforms (VNOI, LQDOJ, LCOJ)",
+      "Git & GitHub CLI"
+    ],
+    "productivityAndAi": [
+      "AI-Assisted Software Development (Tích hợp AI trong phát triển phần mềm)",
+      "Microsoft Excel (Phân tích dữ liệu & Bảng tính tài chính)",
+      "Microsoft Word & PowerPoint (Soạn thảo & Thuyết trình chuyên nghiệp)"
+    ]
+  },
+  "projects": [
+    {
+      "name": "Hệ thống Quản lý Chấm thi & Testcase Themis cho Đội tuyển",
+      "category": "Công cụ & Kiểm thử Giải thuật",
+      "period": "2024",
+      "description": "Tự động hóa quy trình kiểm thử giải thuật cho đội tuyển ôn thi HSG Tỉnh, sinh testcase ngẫu nhiên quy mô lớn và stress-test thuật toán O(N^2) đối chiếu O(N log N).",
+      "technologies": ["C++", "Themis", "Batch Scripting", "Data Generator"],
+      "highlights": [
+        "Sinh testcase kiểm thử quy mô 10^5 - 10^6 phần tử",
+        "Kiểm soát tràn số nguyên (integer overflow) và tối ưu hóa thời gian chạy"
+      ]
+    },
+    {
+      "name": "Bộ lời giải & Phân tích Độ phức tạp 100+ Bài toán VNOI / LQDOJ",
+      "category": "Cấu trúc dữ liệu & Giải thuật",
+      "period": "2024",
+      "description": "Kho mã nguồn chuẩn giải quyết các bài toán Olympic Tin học và Lập trình thi đấu với độ phức tạp không gian và thời gian tối ưu.",
+      "technologies": ["C++20", "Data Structures", "Algorithms", "Fast I/O"],
+      "highlights": [
+        "Áp dụng kỹ thuật tối ưu hóa bộ nhớ đệm Cache và Fast I/O",
+        "Ghi chú chi tiết cách chuyển đổi trạng thái quy hoạch động và đồ thị"
+      ]
+    }
+  ],
+  "achievementsAndCertificates": [
+    {
+      "title": "Giải Ba Học sinh giỏi cấp Tỉnh môn Tin học (3rd Place, Provincial Outstanding Student in IT)",
+      "issuer": "Sở Giáo dục và Đào tạo tỉnh Nghệ An",
+      "year": "2024",
+      "category": "Giải thưởng Học thuật / Lập trình thi đấu"
+    },
+    {
+      "title": "Hoàn thành giải & tối ưu 100+ bài toán giải thuật nâng cao (VNOI, LQDOJ, LCOJ)",
+      "issuer": "Online Judge Community",
+      "year": "2024",
+      "category": "Lập trình thi đấu"
+    }
+  ]
+}
