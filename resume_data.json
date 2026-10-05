@@ -1,0 +1,88 @@
+{
+  "personal_information": {
+    "full_name": "NGUYEN TIEN MANH",
+    "location": "Ha Noi, Vietnam",
+    "phone": "0964564955",
+    "email": "k64.2513310134@ftu.edu.vn",
+    "github": "https://github.com/tienmanh301"
+  },
+  "education": [
+    {
+      "institution": "Foreign Trade University, Ha Noi",
+      "period": "2026 – Present",
+      "major": "Major in Finance and Banking",
+      "related_coursework": [
+        "Programming for Data Analysis and Scientific Computing",
+        "Financial Technology and The Application of Machine Learning to Financial Analysis"
+      ]
+    },
+    {
+      "institution": "Dien Chau 4 High School, Dien Chau, Nghe An",
+      "period": "2022 – 2025",
+      "specialization": "Natural Sciences Specialized Class"
+    }
+  ],
+  "work_experience": [
+    {
+      "organization": "High School Gifted IT Team",
+      "role": "Competitive Programming Technical Assistant And Problem Setter",
+      "period": "2024",
+      "responsibilities": [
+        "Configured and operated the Themis automated evaluation system to execute and grade complex Data Structures And Algorithms problem sets for the provincial gifted team.",
+        "Engineered, validated, and stress-tested comprehensive testcases to cover edge cases and enforce strict Time and Space Complexity constraints (O(N log N), O(N)).",
+        "Analyzed and debugged student code submissions, providing detailed technical feedback on optimizing dynamic programming state transitions, graph traversals, and advanced data structures (Segment Tree, Fenwick Tree)."
+      ]
+    },
+    {
+      "organization": "VNOI And Online Judge Platforms",
+      "role": "Algorithm Practice And Problem Solving",
+      "period": "2024",
+      "responsibilities": [
+        "Solved and optimized over 100 algorithmic problems across VNOI, LQDOJ, and LCOJ platforms, specializing in Dynamic Programming, Graph Theory, Number Theory, and String Hashing.",
+        "Analyzed contest editorials and refactored suboptimal solution code to eliminate Time Limit Exceeded (TLE) and Memory Limit Exceeded (MLE) bottlenecks."
+      ]
+    }
+  ],
+  "skills": {
+    "programming_languages": [
+      "Pascal",
+      "C",
+      "C++",
+      "Python",
+      "HTML",
+      "SQL"
+    ],
+    "algorithms_and_data_structures": [
+      "Dynamic Programming",
+      "Graph Theory",
+      "Number Theory",
+      "String Hashing",
+      "Segment Tree",
+      "Fenwick Tree (BIT)",
+      "Disjoint Set Union (DSU)"
+    ],
+    "tools_and_environments": [
+      "Themis",
+      "Visual Studio Code",
+      "Online Judge"
+    ],
+    "productivity_and_ai_integration": [
+      "AI-Assisted Software Development",
+      "Microsoft Excel",
+      "Microsoft Word",
+      "Microsoft PowerPoint"
+    ]
+  },
+  "achievements": [
+    {
+      "title": "3rd place, Provincial Outstanding Student in IT",
+      "organization_or_location": "Nghe An Province",
+      "year": "2024"
+    },
+    {
+      "title": "Solved 100+ Advanced Algorithmic Problems",
+      "platforms": "VNOI, LQDOJ, and LCOJ Online Judges",
+      "year": "2024"
+    }
+  ]
+}
